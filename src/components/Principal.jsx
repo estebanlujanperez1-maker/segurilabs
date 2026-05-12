@@ -18,32 +18,29 @@ const Principal = () => {
           aria-label="Global"
           className="flex items-center justify-between px-8 py-8 lg:px-14"
         >
-   <div className="flex items-center gap-4 lg:flex-1">
-  
-  <a href="#" className="-m-2.5 p-2.5 flex items-center gap-4">
-    
-    <span className="sr-only">Your Company</span>
+          {/* Logo */}
+          <div className="flex items-center gap-4 lg:flex-1">
+            <a href="#" className="-m-2.5 p-2.5 flex items-center gap-4">
+              <span className="sr-only">Segurilabs</span>
 
-    {/* Logo */}
-    <img
-      src={Logo1}
-      alt="Logo"
-      className="h-24 w-auto relative z-10"
-    />
+              <img
+                src={Logo1}
+                alt="Logo"
+                className="h-24 w-auto relative z-10"
+              />
 
-    {/* Texto al lado del logo */}
-    <div className="relative z-10">
-      <h1 className="text-2xl font-bold text-white">
-        Segurilabs
-      </h1>
+              <div className="relative z-10">
+                <h1 className="text-2xl font-bold text-white">
+                  Segurilabs
+                </h1>
 
-      <p className="text-sm text-gray-300">
-        Seguridad y Salud en el Trabajo
-      </p>
-    </div>
+                <p className="text-sm text-gray-300">
+                  Seguridad y Salud en el Trabajo
+                </p>
+              </div>
+            </a>
+          </div>
 
-  </a>
-</div>
           {/* Menú móvil */}
           <div className="flex lg:hidden relative z-10">
             <button
@@ -69,35 +66,53 @@ const Principal = () => {
             </button>
           </div>
 
-          {/* Menú desktop más grande */}
+          {/* Menú desktop */}
           <div className="hidden lg:flex lg:gap-x-16 relative z-10">
+
             <a
               href="#"
-              className="text-lg font-semibold text-white hover:text-indigo-300 transition"
+              className="relative text-lg font-semibold text-white transition duration-300
+              after:content-[''] after:absolute after:left-0 after:-bottom-2
+              after:w-0 after:h-[3px] after:bg-green-400
+              after:transition-all after:duration-300
+              hover:text-green-300 hover:after:w-full"
             >
               Inicio
             </a>
 
             <a
               href="#"
-              className="text-lg font-semibold text-white hover:text-indigo-300 transition"
+              className="relative text-lg font-semibold text-white transition duration-300
+              after:content-[''] after:absolute after:left-0 after:-bottom-2
+              after:w-0 after:h-[3px] after:bg-green-400
+              after:transition-all after:duration-300
+              hover:text-green-300 hover:after:w-full"
             >
               Nosotros
             </a>
 
             <a
               href="#"
-              className="text-lg font-semibold text-white hover:text-indigo-300 transition"
+              className="relative text-lg font-semibold text-white transition duration-300
+              after:content-[''] after:absolute after:left-0 after:-bottom-2
+              after:w-0 after:h-[3px] after:bg-green-400
+              after:transition-all after:duration-300
+              hover:text-green-300 hover:after:w-full"
             >
               Servicios
             </a>
 
             <a
               href="#"
-              className="text-lg font-semibold text-white hover:text-indigo-300 transition"
+              className="relative text-lg font-semibold text-white transition duration-300
+              after:content-[''] after:absolute after:left-0 after:-bottom-2
+              after:w-0 after:h-[3px] after:bg-green-400
+              after:transition-all after:duration-300
+              hover:text-green-300 hover:after:w-full"
             >
               Preguntas
             </a>
+
           </div>
         </nav>
       </header>

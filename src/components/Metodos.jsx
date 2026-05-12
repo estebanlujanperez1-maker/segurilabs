@@ -37,10 +37,10 @@ const steps = [
 ];
 
 const tabs = [
-  { label: "Planear",    dot: "#4ab3e8" },
-  { label: "Hacer",     dot: "#4ecb91" },
+  { label: "Planear", dot: "#4ab3e8" },
+  { label: "Hacer", dot: "#4ecb91" },
   { label: "Verificar", dot: "#f5a623" },
-  { label: "Actuar",    dot: "#c47fe0" },
+  { label: "Actuar", dot: "#c47fe0" },
 ];
 
 const guarantees = [
@@ -56,12 +56,21 @@ export default function Metodos() {
       {/* Header */}
       <div style={s.header}>
         <span style={s.badge}>Metodología PHVA · Res. 0312 de 2019</span>
-        <h2 style={s.h2}>Gestión estratégica con cumplimiento normativo</h2>
-        <h3 style={s.h3}>Metodología alineada con los estándares del Ministerio</h3>
+
+        <h2 style={s.h2}>
+          Gestión estratégica con cumplimiento normativo
+        </h2>
+
+        <h3 style={s.h3}>
+          Metodología alineada con los estándares del Ministerio
+        </h3>
+
         <p style={s.lead}>
-          Trabajamos bajo el método establecido por el Ministerio, aplicando el ciclo PHVA conforme
-          a la Resolución 0312 de 2019. Cada fase se desarrolla de manera estratégica y verificable,
-          asegurando resultados efectivos, medibles y más allá del simple cumplimiento documental.
+          Trabajamos bajo el método establecido por el Ministerio,
+          aplicando el ciclo PHVA conforme a la Resolución 0312 de
+          2019. Cada fase se desarrolla de manera estratégica y
+          verificable, asegurando resultados efectivos, medibles y
+          más allá del simple cumplimiento documental.
         </p>
       </div>
 
@@ -69,7 +78,12 @@ export default function Metodos() {
       <div style={s.tabs}>
         {tabs.map((t) => (
           <div key={t.label} style={s.tab}>
-            <span style={{ ...s.dot, backgroundColor: t.dot }} />
+            <span
+              style={{
+                ...s.dot,
+                backgroundColor: t.dot,
+              }}
+            />
             {t.label}
           </div>
         ))}
@@ -77,15 +91,44 @@ export default function Metodos() {
 
       {/* Timeline horizontal */}
       <div style={s.timelineWrap}>
-        {/* Línea central */}
+        {/* Línea */}
         <div style={s.line} />
+
         <div style={s.stepsRow}>
           {steps.map((step) => (
             <div key={step.num} style={s.step}>
               <div style={s.num}>{step.num}</div>
-              <div style={s.card}>
-                <h4 style={s.cardTitle}>{step.title}</h4>
-                <p style={s.cardText}>{step.text}</p>
+
+              <div
+                style={s.card}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform =
+                    "translateY(-8px)";
+                  e.currentTarget.style.background =
+                    "#e8f8ef";
+                  e.currentTarget.style.boxShadow =
+                    "0 10px 25px rgba(26,122,82,0.15)";
+                  e.currentTarget.style.borderColor =
+                    "#1a7a52";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform =
+                    "translateY(0)";
+                  e.currentTarget.style.background =
+                    "#fff";
+                  e.currentTarget.style.boxShadow =
+                    "none";
+                  e.currentTarget.style.borderColor =
+                    "#e8e8e8";
+                }}
+              >
+                <h4 style={s.cardTitle}>
+                  {step.title}
+                </h4>
+
+                <p style={s.cardText}>
+                  {step.text}
+                </p>
               </div>
             </div>
           ))}
@@ -95,13 +138,26 @@ export default function Metodos() {
       {/* Garantías */}
       <div style={s.guarantee}>
         <div style={s.gIcon}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#fff"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             <polyline points="9 12 11 14 15 10" />
           </svg>
         </div>
+
         <div style={{ flex: 1 }}>
-          <p style={s.gTitle}>Lo que garantizamos en cada proceso</p>
+          <p style={s.gTitle}>
+            Lo que garantizamos en cada proceso
+          </p>
+
           <div style={s.gGrid}>
             {guarantees.map((g) => (
               <div key={g} style={s.gItem}>
@@ -115,7 +171,7 @@ export default function Metodos() {
     </section>
   );
 }
-
+{/* Estilos */ }
 const GREEN = "#1a7a52";
 
 const s = {
@@ -124,10 +180,12 @@ const s = {
     padding: "4rem 2rem",
     fontFamily: "sans-serif",
   },
+
   header: {
     textAlign: "center",
     marginBottom: "2rem",
   },
+
   badge: {
     display: "inline-block",
     background: "rgba(26,122,82,0.08)",
@@ -141,6 +199,7 @@ const s = {
     marginBottom: "1rem",
     textTransform: "uppercase",
   },
+
   h2: {
     fontSize: "26px",
     fontWeight: 600,
@@ -148,12 +207,14 @@ const s = {
     margin: "0 0 0.4rem",
     lineHeight: 1.3,
   },
+
   h3: {
     fontSize: "15px",
     fontWeight: 400,
     color: "#666",
     margin: "0 0 0.9rem",
   },
+
   lead: {
     fontSize: "14px",
     color: "#666",
@@ -161,6 +222,7 @@ const s = {
     margin: "0 auto",
     lineHeight: 1.7,
   },
+
   tabs: {
     display: "flex",
     justifyContent: "center",
@@ -168,6 +230,7 @@ const s = {
     flexWrap: "wrap",
     marginBottom: "3rem",
   },
+
   tab: {
     display: "flex",
     alignItems: "center",
@@ -182,6 +245,7 @@ const s = {
     letterSpacing: "0.06em",
     textTransform: "uppercase",
   },
+
   dot: {
     width: "9px",
     height: "9px",
@@ -197,6 +261,7 @@ const s = {
     maxWidth: "1100px",
     margin: "0 auto 2rem",
   },
+
   line: {
     position: "absolute",
     top: "23px",
@@ -206,6 +271,7 @@ const s = {
     background: "#e0e0e0",
     zIndex: 0,
   },
+
   stepsRow: {
     display: "flex",
     gap: "8px",
@@ -213,17 +279,20 @@ const s = {
     zIndex: 1,
     minWidth: "700px",
   },
+
   step: {
     flex: 1,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
+
   num: {
     width: "46px",
     height: "46px",
     borderRadius: "50%",
-    background: "linear-gradient(135deg, #0f4d35, #2eaa72)",
+    background:
+      "linear-gradient(135deg, #0f4d35, #2eaa72)",
     color: "#fff",
     fontSize: "12px",
     fontWeight: 600,
@@ -235,6 +304,7 @@ const s = {
     border: "3px solid #fff",
     outline: `1.5px solid ${GREEN}`,
   },
+
   card: {
     background: "#fff",
     border: "1px solid #e8e8e8",
@@ -242,7 +312,10 @@ const s = {
     padding: "0.8rem",
     width: "100%",
     boxSizing: "border-box",
+    transition: "all 0.3s ease",
+    cursor: "pointer",
   },
+
   cardTitle: {
     fontSize: "12px",
     fontWeight: 600,
@@ -250,6 +323,7 @@ const s = {
     margin: "0 0 0.35rem",
     lineHeight: 1.3,
   },
+
   cardText: {
     fontSize: "11px",
     color: "#666",
@@ -271,16 +345,19 @@ const s = {
     marginLeft: "auto",
     marginRight: "auto",
   },
+
   gIcon: {
     width: "40px",
     height: "40px",
     borderRadius: "10px",
-    background: "linear-gradient(135deg, #0f4d35, #2eaa72)",
+    background:
+      "linear-gradient(135deg, #0f4d35, #2eaa72)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flexShrink: 0,
   },
+
   gTitle: {
     fontSize: "12px",
     fontWeight: 600,
@@ -289,11 +366,13 @@ const s = {
     textTransform: "uppercase",
     margin: "0 0 0.6rem",
   },
+
   gGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     gap: "5px 20px",
   },
+
   gItem: {
     fontSize: "12px",
     color: "#555",
@@ -301,6 +380,7 @@ const s = {
     gap: "6px",
     alignItems: "flex-start",
   },
+
   check: {
     color: GREEN,
     fontWeight: 700,
