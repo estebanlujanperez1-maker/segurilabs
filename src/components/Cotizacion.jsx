@@ -1,151 +1,195 @@
 import React from "react";
+import { ShieldCheck, PhoneCall } from "lucide-react";
 
 export default function Cotizacion() {
   return (
-    <section className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8 overflow-hidden">
+    <section className="relative isolate overflow-hidden bg-gradient-to-b from-white to-green-50 py-24 px-4 sm:px-6 lg:px-8">
       
       {/* Fondo decorativo */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl"
       >
         <div
-          className="relative left-1/2 -translate-x-1/2 rotate-12 bg-gradient-to-tr from-green-200 to-green-400 opacity-30 w-[72rem] aspect-[1155/678]"
+          className="relative left-1/2 -translate-x-1/2 rotate-12 bg-gradient-to-tr from-green-200 to-green-400 opacity-30 w-[70rem] aspect-[1155/678]"
           style={{
             clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+              "polygon(74.1% 44.1%,100% 61.6%,97.5% 26.9%,85.5% 0.1%,80.7% 2%,72.5% 32.5%,60.2% 62.4%,52.4% 68.1%,47.5% 58.3%,45.2% 34.5%,27.5% 76.7%,0.1% 64.9%,17.9% 100%,27.6% 76.8%,76.1% 97.7%,74.1% 44.1%)",
           }}
         />
       </div>
 
-      {/* Encabezado */}
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          Contáctanos
-        </h2>
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
-        <p className="mt-4 text-lg text-gray-600">
-          Solocita una cotización personalizada para tu empresa.
-        </p>
-      </div>
+        {/* Texto */}
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-sm font-medium text-green-700 mb-6">
+            <ShieldCheck className="w-4 h-4" />
+            Seguridad y Salud en el Trabajo
+          </span>
 
-      {/* Formulario */}
-      <form className="mx-auto mt-16 max-w-xl sm:mt-20">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
+            Solicita una asesoría personalizada para tu empresa
+          </h2>
 
-          {/* Nombre */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-900">
-              Nombre
-            </label>
+          <p className="mt-6 text-gray-600 text-lg leading-relaxed max-w-xl">
+            Nuestro equipo está listo para ayudarte a fortalecer la seguridad,
+            el bienestar y el cumplimiento normativo de tu organización.
+          </p>
 
-            <div className="mt-2.5">
-              <input
-                type="text"
-                placeholder="Tu nombre"
-                className="block w-full rounded-xl border border-green-200 bg-white px-4 py-3 text-gray-900 shadow-sm outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-300"
-              />
+          {/* Beneficios */}
+          <div className="mt-10 space-y-4">
+
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+
+              <p className="text-gray-700">
+                Diagnóstico y asesoría especializada
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+
+              <p className="text-gray-700">
+                Atención rápida y personalizada
+              </p>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+
+              <p className="text-gray-700">
+                Soluciones adaptadas a tu empresa
+              </p>
             </div>
           </div>
 
-          {/* Apellido */}
-          <div>
-            <label className="block text-sm font-semibold text-gray-900">
-              Apellido
-            </label>
+          {/* Contacto rápido */}
+          <div className="mt-10 flex items-center gap-4">
+            <div className="bg-green-500 text-white p-4 rounded-2xl shadow-lg">
+              <PhoneCall className="w-6 h-6" />
+            </div>
 
-            <div className="mt-2.5">
-              <input
-                type="text"
-                placeholder="Tu apellido"
-                className="block w-full rounded-xl border border-green-200 bg-white px-4 py-3 text-gray-900 shadow-sm outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-300"
-              />
+            <div>
+              <p className="text-sm text-gray-500">
+                Atención inmediata
+              </p>
+
+              <p className="font-semibold text-gray-900 text-lg">
+                +57 300 000 0000
+              </p>
             </div>
           </div>
+        </div>
 
-          {/* Empresa */}
-          <div className="sm:col-span-2">
-            <label className="block text-sm font-semibold text-gray-900">
-              Empresa
-            </label>
+        {/* Formulario */}
+        <div className="bg-white/90 backdrop-blur-xl border border-green-100 shadow-2xl rounded-3xl p-8 md:p-10">
 
-            <div className="mt-2.5">
+          <form className="space-y-6">
+
+            {/* Nombre y apellido */}
+            <div className="grid sm:grid-cols-2 gap-5">
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-800 mb-2">
+                  Nombre
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="Tu nombre"
+                  className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-800 mb-2">
+                  Apellido
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="Tu apellido"
+                  className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
+                />
+              </div>
+            </div>
+
+            {/* Empresa */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-800 mb-2">
+                Empresa
+              </label>
+
               <input
                 type="text"
                 placeholder="Nombre de tu empresa"
-                className="block w-full rounded-xl border border-green-200 bg-white px-4 py-3 text-gray-900 shadow-sm outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-300"
+                className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
               />
             </div>
-          </div>
 
-          {/* Email */}
-          <div className="sm:col-span-2">
-            <label className="block text-sm font-semibold text-gray-900">
-              Correo electrónico
-            </label>
+            {/* Email */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-800 mb-2">
+                Correo electrónico
+              </label>
 
-            <div className="mt-2.5">
               <input
                 type="email"
-                placeholder="correo@ejemplo.com"
-                className="block w-full rounded-xl border border-green-200 bg-white px-4 py-3 text-gray-900 shadow-sm outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-300"
+                placeholder="correo@empresa.com"
+                className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
               />
             </div>
-          </div>
 
-          {/* Teléfono */}
-          <div className="sm:col-span-2">
-            <label className="block text-sm font-semibold text-gray-900">
-              Número de teléfono
-            </label>
+            {/* Teléfono */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-800 mb-2">
+                Número de teléfono
+              </label>
 
-            <div className="mt-2.5">
               <input
-                type="text"
+                type="tel"
                 placeholder="+57 300 000 0000"
-                className="block w-full rounded-xl border border-green-200 bg-white px-4 py-3 text-gray-900 shadow-sm outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-300"
+                className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
               />
             </div>
-          </div>
 
-          {/* Mensaje */}
-          <div className="sm:col-span-2">
-            <label className="block text-sm font-semibold text-gray-900">
-              Mensaje
-            </label>
+            {/* Mensaje */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-800 mb-2">
+                Mensaje
+              </label>
 
-            <div className="mt-2.5">
               <textarea
                 rows={5}
-                placeholder="Escribe tu mensaje..."
-                className="block w-full rounded-xl border border-green-200 bg-white px-4 py-3 text-gray-900 shadow-sm outline-none transition focus:border-green-500 focus:ring-2 focus:ring-green-300"
+                placeholder="Cuéntanos qué necesitas..."
+                className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none resize-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
               />
             </div>
-          </div>
 
-          {/* Checkbox */}
-          <div className="sm:col-span-2 flex items-center gap-3">
-            <input
-              type="checkbox"
-              className="h-4 w-4 rounded border-green-300 text-green-500 focus:ring-green-400"
-            />
+            {/* Checkbox */}
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                className="mt-1 h-4 w-4 rounded border-gray-300 text-green-500 focus:ring-green-400"
+              />
 
-            <p className="text-sm text-gray-600">
-              Acepto la política de privacidad.
-            </p>
-          </div>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                Acepto la política de privacidad y el tratamiento de datos personales.
+              </p>
+            </div>
+
+            {/* Botón */}
+            <button
+              type="submit"
+              className="w-full rounded-2xl bg-green-500 px-6 py-4 text-white font-semibold shadow-lg transition-all duration-300 hover:bg-green-600 hover:scale-[1.01]"
+            >
+              Solicitar asesoría
+            </button>
+          </form>
         </div>
-
-        {/* Botón */}
-        <div className="mt-10">
-          <button
-            type="submit"
-            className="w-full rounded-xl bg-green-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-green-600"
-          >
-            Enviar mensaje
-          </button>
-        </div>
-      </form>
+      </div>
     </section>
   );
 }

@@ -1,10 +1,11 @@
+import React from "react";
+
 export default function Equipo() {
   const team = [
     {
       name: "Nombre Apellido",
       role: "Coordinadora SG-SST",
       bio: "Especialista en seguridad y salud en el trabajo con más de 8 años acompañando empresas en su implementación normativa.",
-      facebook: "https://facebook.com",
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com",
     },
@@ -12,7 +13,6 @@ export default function Equipo() {
       name: "Nombre Apellido",
       role: "Psicólogo Organizacional",
       bio: "Experto en bienestar laboral, clima organizacional y manejo del estrés. Acompaña procesos de intervención psicosocial en empresas de todos los sectores.",
-      facebook: "https://facebook.com",
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com",
     },
@@ -20,297 +20,138 @@ export default function Equipo() {
       name: "Nombre Apellido",
       role: "Asesora de Riesgos Laborales",
       bio: "Con formación en medicina del trabajo y ergonomía, lidera los diagnósticos de condiciones de salud y los programas de vigilancia epidemiológica.",
-      facebook: "https://facebook.com",
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com",
     },
   ];
 
-  const AvatarPlaceholder = () => (
-    <svg
-      viewBox="0 0 80 80"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{
-        width: "65%",
-        height: "65%",
-        color: "#a0b8c8",
-      }}
-    >
-      <circle
-        cx="40"
-        cy="30"
-        r="16"
-        fill="currentColor"
-        opacity="0.4"
-      />
-
-      <ellipse
-        cx="40"
-        cy="70"
-        rx="26"
-        ry="17"
-        fill="currentColor"
-        opacity="0.25"
-      />
-    </svg>
-  );
-
-  const IconFacebook = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="#fff"
-      width="20"
-      height="20"
-    >
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-    </svg>
-  );
-
-  const IconLinkedIn = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="#fff"
-      width="20"
-      height="20"
-    >
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  );
-
-  const IconInstagram = () => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="#fff"
-      width="20"
-      height="20"
-    >
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
-    </svg>
-  );
-
   return (
-    <div
-      style={{
-        fontFamily: "'Segoe UI', system-ui, sans-serif",
-        maxWidth: "1100px",
-        margin: "0 auto",
-        padding: "60px 24px",
-      }}
-    >
-      <p
-        style={{
-          textAlign: "center",
-          fontSize: "11px",
-          fontWeight: 700,
-          letterSpacing: "2.5px",
-          color: "#3aaa7a",
-          textTransform: "uppercase",
-          marginBottom: "10px",
-        }}
-      >
-        Nuestro equipo
-      </p>
+    <section className="w-full bg-gradient-to-b from-white to-green-50 py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
 
-      <h2
-        style={{
-          textAlign: "center",
-          fontSize: "32px",
-          fontWeight: 800,
-          color: "#1a3a5c",
-          marginBottom: "48px",
-        }}
-      >
-        Los profesionales detrás de tu seguridad
-      </h2>
+        {/* Encabezado */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "40px",
-        }}
-      >
-        {team.map((member, i) => (
-          <div
-            key={i}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              transition: "all 0.35s ease",
-              borderRadius: "18px",
-              padding: "18px",
-              cursor: "pointer",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform =
-                "translateY(-10px)";
+          <span className="inline-block text-green-600 font-semibold uppercase tracking-[0.3em] text-sm mb-4">
+            Nuestro equipo
+          </span>
 
-              e.currentTarget.style.boxShadow =
-                "0 18px 40px rgba(167, 139, 250, 0.22)";
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            Profesionales comprometidos con tu seguridad
+          </h2>
 
-              e.currentTarget.style.background =
-                "rgba(245, 243, 255, 0.7)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform =
-                "translateY(0)";
+          <p className="mt-6 text-gray-600 text-base md:text-lg leading-relaxed">
+            Contamos con especialistas altamente capacitados en seguridad
+            y salud en el trabajo para brindar soluciones integrales y
+            acompañamiento estratégico a las empresas.
+          </p>
+        </div>
 
-              e.currentTarget.style.boxShadow = "none";
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-              e.currentTarget.style.background =
-                "transparent";
-            }}
-            onMouseDown={(e) => {
-              e.currentTarget.style.transform =
-                "translateY(-4px) scale(0.98)";
-            }}
-            onMouseUp={(e) => {
-              e.currentTarget.style.transform =
-                "translateY(-10px) scale(1)";
-            }}
-          >
-            {/* Avatar */}
+          {team.map((member, index) => (
             <div
-              style={{
-                alignSelf: "center",
-                marginBottom: "24px",
-                width: "180px",
-                height: "180px",
-              }}
+              key={index}
+              className="group relative bg-white border border-green-100 rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden"
             >
-              <div
-                style={{
-                  width: "180px",
-                  height: "180px",
-                  borderRadius: "50%",
-                  padding: "5px",
-                  background:
-                    "linear-gradient(135deg, #1a5c45, #3aaa7a, #4cd694)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: "50%",
-                    background: "#e8f0f5",
-                    overflow: "hidden",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <AvatarPlaceholder />
+              {/* Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-100/0 via-green-100/0 to-green-200/20 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+              {/* Avatar */}
+              <div className="relative flex justify-center mb-8">
+
+                <div className="w-40 h-40 rounded-full bg-gradient-to-br from-green-500 via-green-400 to-emerald-300 p-[5px] shadow-xl">
+
+                  <div className="w-full h-full rounded-full bg-gradient-to-b from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
+
+                    <svg
+                      viewBox="0 0 80 80"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-[65%] h-[65%] text-gray-400"
+                    >
+                      <circle
+                        cx="40"
+                        cy="30"
+                        r="16"
+                        fill="currentColor"
+                        opacity="0.4"
+                      />
+
+                      <ellipse
+                        cx="40"
+                        cy="70"
+                        rx="26"
+                        ry="17"
+                        fill="currentColor"
+                        opacity="0.25"
+                      />
+                    </svg>
+
+                  </div>
+                </div>
+              </div>
+
+              {/* Información */}
+              <div className="relative text-center">
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  {member.name}
+                </h3>
+
+                <p className="text-green-600 font-semibold text-sm uppercase tracking-wide mb-5">
+                  {member.role}
+                </p>
+
+                <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                  {member.bio}
+                </p>
+
+                {/* Redes sociales */}
+                <div className="flex items-center justify-center gap-4">
+
+                  {/* LinkedIn */}
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn"
+                    className="w-11 h-11 rounded-2xl bg-green-500 text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-green-600 transition-all duration-300"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path d="M20.447 20.452H16.9v-5.569c0-1.328-.026-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.356V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z" />
+                    </svg>
+                  </a>
+
+                  {/* Instagram */}
+                  <a
+                    href={member.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram"
+                    className="w-11 h-11 rounded-2xl bg-green-500 text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-green-600 transition-all duration-300"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm8.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5z" />
+                    </svg>
+                  </a>
+
                 </div>
               </div>
             </div>
-
-            {/* Info */}
-            <div
-              style={{
-                fontSize: "22px",
-                fontWeight: 800,
-                color: "#1a1a1a",
-                marginBottom: "4px",
-              }}
-            >
-              {member.name}
-            </div>
-
-            <div
-              style={{
-                fontSize: "13px",
-                fontWeight: 700,
-                color: "#3aaa7a",
-                marginBottom: "12px",
-              }}
-            >
-              {member.role}
-            </div>
-
-            <p
-              style={{
-                fontSize: "13px",
-                color: "#5a6a7a",
-                lineHeight: "1.65",
-                marginBottom: "20px",
-                flex: 1,
-              }}
-            >
-              {member.bio}
-            </p>
-
-            {/* Barra social */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "20px",
-                width: "100%",
-                background:
-                  "linear-gradient(135deg, #1a5c45 0%, #3aaa7a 70%, #4cd694 100%)",
-                borderRadius: "6px",
-                padding: "12px 20px",
-              }}
-            >
-              <a
-                href={member.facebook}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                style={{
-                  color: "#fff",
-                  display: "flex",
-                  alignItems: "center",
-                  textDecoration: "none",
-                  opacity: 0.9,
-                }}
-              >
-                <IconFacebook />
-              </a>
-
-              <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                style={{
-                  color: "#fff",
-                  display: "flex",
-                  alignItems: "center",
-                  textDecoration: "none",
-                  opacity: 0.9,
-                }}
-              >
-                <IconLinkedIn />
-              </a>
-
-              <a
-                href={member.instagram}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                style={{
-                  color: "#fff",
-                  display: "flex",
-                  alignItems: "center",
-                  textDecoration: "none",
-                  opacity: 0.9,
-                }}
-              >
-                <IconInstagram />
-              </a>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

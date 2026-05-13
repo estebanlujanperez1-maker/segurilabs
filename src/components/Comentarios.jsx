@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 export default function Comentarios() {
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const comments = [
     {
@@ -65,159 +65,159 @@ export default function Comentarios() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % comments.length);
-    }, 5000);
+    }, 4500);
 
     return () => clearInterval(interval);
   }, [comments.length]);
 
-  const getPrevIndex = () =>
+  const prevIndex =
     (currentIndex - 1 + comments.length) % comments.length;
 
-  const getNextIndex = () =>
+  const nextIndex =
     (currentIndex + 1) % comments.length;
 
-  const handlePrev = () => {
-    setCurrentIndex(getPrevIndex());
-  };
-
-  const handleNext = () => {
-    setCurrentIndex(getNextIndex());
-  };
-
   return (
-    <section className="w-full bg-white py-20 px-4 flex justify-center">
-      <div className="w-full max-w-5xl">
-        {/* Encabezado */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Comentarios de nuestros clientes
+    <section className="w-full bg-gradient-to-b from-white to-green-50 py-20 px-4 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <span className="text-green-600 font-semibold uppercase tracking-widest text-sm">
+            Testimonios
+          </span>
+
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3">
+            Lo que dicen nuestros clientes
           </h2>
 
-          <div className="w-20 h-1 bg-gradient-to-r from-green-400 via-purple-500 to-green-400 mx-auto rounded-full"></div>
-
-          <p className="text-gray-600 text-base mt-5 max-w-xl mx-auto">
-            Descubre lo que nuestros clientes dicen sobre nosotros
+          <p className="text-gray-600 max-w-2xl mx-auto mt-5 text-sm md:text-base leading-relaxed">
+            Empresas que han confiado en nosotros destacan nuestro compromiso,
+            profesionalismo y calidad en cada proyecto.
           </p>
         </div>
 
-        {/* Carrusel */}
-        <div className="relative flex items-center justify-center gap-4">
-          {/* Izquierda */}
-          <div className="hidden md:block w-52 opacity-50 scale-90">
+        {/* Carousel */}
+        <div className="relative flex items-center justify-center">
+          {/* Left */}
+          <div className="hidden lg:block w-60 opacity-40 scale-90 transition-all duration-500">
             <CommentCard
-              comment={comments[getPrevIndex()]}
-              isCenter={false}
+              comment={comments[prevIndex]}
+              active={false}
             />
           </div>
 
-          {/* Centro */}
-          <div className="w-full max-w-md z-10">
+          {/* Center */}
+          <div className="w-full max-w-lg mx-4 relative z-10">
             <CommentCard
               comment={comments[currentIndex]}
-              isCenter={true}
+              active={true}
             />
           </div>
 
-          {/* Derecha */}
-          <div className="hidden md:block w-52 opacity-50 scale-90">
+          {/* Right */}
+          <div className="hidden lg:block w-60 opacity-40 scale-90 transition-all duration-500">
             <CommentCard
-              comment={comments[getNextIndex()]}
-              isCenter={false}
+              comment={comments[nextIndex]}
+              active={false}
             />
           </div>
+
+          {/* Navigation */}
+          <button
+            onClick={() =>
+              setCurrentIndex(prevIndex)
+            }
+            className="absolute left-0 md:left-6 top-1/2 -translate-y-1/2 bg-white shadow-lg border border-gray-200 p-3 rounded-full hover:scale-110 transition-all duration-300 z-20"
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-700" />
+          </button>
+
+          <button
+            onClick={() =>
+              setCurrentIndex(nextIndex)
+            }
+            className="absolute right-0 md:right-6 top-1/2 -translate-y-1/2 bg-white shadow-lg border border-gray-200 p-3 rounded-full hover:scale-110 transition-all duration-300 z-20"
+          >
+            <ChevronRight className="w-5 h-5 text-gray-700" />
+          </button>
         </div>
 
-        {/* Navegación */}
-        <div className="flex items-center justify-center gap-6 mt-10">
-          <button
-            onClick={handlePrev}
-            className="p-2 rounded-full bg-gradient-to-r from-green-400 to-green-500 text-white hover:scale-110 transition-all duration-300"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-
-          {/* Indicadores */}
-          <div className="flex gap-2">
-            {comments.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentIndex(idx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  idx === currentIndex
-                    ? "bg-gradient-to-r from-purple-500 to-green-400 w-7"
-                    : "bg-gray-300 w-2"
-                }`}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={handleNext}
-            className="p-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:scale-110 transition-all duration-300"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
+        {/* Indicators */}
+        <div className="flex justify-center gap-2 mt-10">
+          {comments.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`transition-all duration-300 rounded-full ${
+                idx === currentIndex
+                  ? "w-8 h-2 bg-green-500"
+                  : "w-2 h-2 bg-gray-300"
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function CommentCard({ comment, isCenter }) {
+function CommentCard({ comment, active }) {
   return (
     <div
-      className={`rounded-2xl transition-all duration-500 ${
-        isCenter
-          ? "bg-green-50 border-2 border-green-300 shadow-xl p-6"
-          : "bg-white border border-gray-200 shadow-md p-4"
+      className={`rounded-3xl transition-all duration-500 backdrop-blur-sm ${
+        active
+          ? "bg-green-100 border border-green-200 shadow-2xl p-8"
+          : "bg-white border border-gray-200 shadow-md p-5"
       }`}
     >
-      {/* Usuario */}
-      <div className="flex items-center gap-3 mb-4">
+      {/* Top */}
+      <div className="flex items-center gap-4 mb-5">
         <img
           src={comment.image}
           alt={comment.name}
-          className={`rounded-full object-cover ${
-            isCenter ? "w-14 h-14" : "w-10 h-10"
+          loading="lazy"
+          className={`rounded-full object-cover border-2 border-white shadow-md ${
+            active ? "w-16 h-16" : "w-12 h-12"
           }`}
         />
 
         <div>
           <h3
             className={`font-bold text-gray-900 ${
-              isCenter ? "text-base" : "text-sm"
+              active ? "text-lg" : "text-sm"
             }`}
           >
             {comment.name}
           </h3>
 
-          <p className="text-xs text-gray-500">{comment.role}</p>
+          <p className="text-gray-500 text-sm">
+            {comment.role}
+          </p>
 
-          <p className="text-xs text-green-600 font-medium">
+          <p className="text-green-600 text-sm font-medium">
             {comment.company}
           </p>
         </div>
       </div>
 
-      {/* Estrellas */}
-      <div className="flex gap-1 mb-3">
+      {/* Stars */}
+      <div className="flex gap-1 mb-4">
         {Array.from({ length: comment.rating }).map((_, i) => (
           <Star
             key={i}
-            className={`fill-purple-500 text-purple-500 ${
-              isCenter ? "w-4 h-4" : "w-3 h-3"
+            className={`fill-yellow-400 text-yellow-400 ${
+              active ? "w-5 h-5" : "w-4 h-4"
             }`}
           />
         ))}
       </div>
 
-      {/* Texto */}
+      {/* Content */}
       <p
         className={`text-gray-700 leading-relaxed ${
-          isCenter ? "text-sm" : "text-xs"
+          active ? "text-base" : "text-sm"
         }`}
       >
-        "{comment.content}"
+        “{comment.content}”
       </p>
     </div>
   );
