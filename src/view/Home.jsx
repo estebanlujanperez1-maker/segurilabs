@@ -7,24 +7,27 @@ import Servicios from '../components/Servicios'
 import Planes from '../components/Planes'
 import Presencia from '../components/Presencia'
 import Cotizacion from '../components/Cotizacion'
-import Footer from '../components/Footer' 
+import Footer from '../components/Footer'
 import Comentarios from '../components/Comentarios'
+import Empresas from '../components/Empresas'
 
 
 const Home = () => {
   return (
     <div>
-     <Principal />
-     <Metodos />
-     <Servicios />
+      <Principal />
+      <Metodos />
+      <Servicios />
       <Planes />
-      <Cotizacion />  
+      <Empresas/>
+      <Cotizacion />
       <Comentarios />
-        <Presencia />
-   <Equipo />
-   <Preguntas />
-   
-   <Footer />
+      <Presencia />
+      
+      <Equipo />
+      <Preguntas />
+
+      <Footer />
     </div>
   )
 }

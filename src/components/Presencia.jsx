@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPin, Phone, Clock } from "lucide-react";
+
 export default function Presencia() {
   return (
     <section className="w-full bg-white py-24 px-6 lg:px-16">
@@ -19,20 +20,19 @@ export default function Presencia() {
 
         {/* Contenido */}
         <div className="grid lg:grid-cols-2 gap-10 items-stretch">
-          {/* Información */}
-          <div className="flex flex-col gap-8">
-            {/* tarjeta1*/}
-            <div className="bg-black rounded-3xl p-8 shadow-xl border border-purple-500/20 hover:scale-[1.01] transition duration-300">
+          {/* Tarjetas — flex-col + h-full para igualar altura del mapa */}
+          <div className="flex flex-col gap-4 h-full">
+
+            {/* Card 1 — Ubicación */}
+            <div className="flex-1 bg-black rounded-3xl p-8 shadow-xl border border-purple-500/20 hover:scale-[1.01] transition duration-300">
               <div className="flex items-start gap-4">
                 <div className="bg-green-400/20 p-4 rounded-2xl">
                   <MapPin className="text-green-400 w-7 h-7" />
                 </div>
-
                 <div>
-                  <h3 className="text-white text-2xl font-semibold mb-3">
+                  <h3 className="text-white text-xl font-semibold mb-3">
                     Ubicación
                   </h3>
-
                   <p className="text-gray-300 leading-relaxed">
                     Centro Comercial Plaza Real <br />
                     Bello, Antioquia <br />
@@ -42,18 +42,16 @@ export default function Presencia() {
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-purple-700 rounded-3xl p-8 shadow-xl hover:scale-[1.01] transition duration-300">
+            {/* Card 2 — Contacto */}
+            <div className="flex-1 bg-purple-700 rounded-3xl p-8 shadow-xl hover:scale-[1.01] transition duration-300">
               <div className="flex items-start gap-4">
                 <div className="bg-white/10 p-4 rounded-2xl">
                   <Phone className="text-white w-7 h-7" />
                 </div>
-
                 <div>
-                  <h3 className="text-white text-2xl font-semibold mb-3">
+                  <h3 className="text-white text-xl font-semibold mb-3">
                     Contacto
                   </h3>
-
                   <p className="text-purple-100">
                     +57 300 000 0000 <br />
                     empresa@email.com
@@ -62,18 +60,16 @@ export default function Presencia() {
               </div>
             </div>
 
-            {/* Card 3 */}
-            <div className="bg-green-400 rounded-3xl p-8 shadow-xl hover:scale-[1.01] transition duration-300">
+            {/* Card 3 — Horarios */}
+            <div className="flex-1 bg-green-400 rounded-3xl p-8 shadow-xl hover:scale-[1.01] transition duration-300">
               <div className="flex items-start gap-4">
                 <div className="bg-black/10 p-4 rounded-2xl">
                   <Clock className="text-black w-7 h-7" />
                 </div>
-{/*Horarios*/}
                 <div>
-                  <h3 className="text-black text-2xl font-semibold mb-3">
+                  <h3 className="text-black text-xl font-semibold mb-3">
                     Horarios
                   </h3>
-{/*atencion*/}
                   <p className="text-black/80">
                     Lunes a Viernes <br />
                     8:00 AM - 6:00 PM
@@ -81,10 +77,11 @@ export default function Presencia() {
                 </div>
               </div>
             </div>
+
           </div>
 
           {/* Mapa */}
-          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-gray-200 min-h-[600px]">
+          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-gray-200">
             {/* Línea decorativa */}
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-purple-600 z-10"></div>
 
@@ -99,13 +96,8 @@ export default function Presencia() {
 
             {/* Overlay */}
             <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-md rounded-2xl px-6 py-4 shadow-lg">
-              <p className="text-black font-semibold">
-                Oficina Principal
-              </p>
-
-              <p className="text-sm text-gray-600">
-                Centro Comercial Plaza Real
-              </p>
+              <p className="text-black font-semibold">Oficina Principal</p>
+              <p className="text-sm text-gray-600">Centro Comercial Plaza Real</p>
             </div>
           </div>
         </div>

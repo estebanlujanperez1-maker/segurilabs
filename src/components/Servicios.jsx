@@ -75,24 +75,70 @@ const icons = {
 };
 
 const services = [
-  { cat: "sst", icon: "shield",   title: "Diseño del SG-SST",              desc: "Estructuramos desde cero tu Sistema de Gestión de SST, cumpliendo cada estándar de la Resolución 0312 de 2019." },
-  { cat: "sst", icon: "refresh",  title: "Mantenimiento del SG-SST",       desc: "Mantenemos activo y actualizado tu sistema, garantizando cumplimiento continuo y documentación al día." },
-  { cat: "sst", icon: "fileText", title: "Reporte de Estándares Mínimos",  desc: "Acompañamiento completo para el reporte anual ante el Ministerio de Trabajo, sin contratiempos." },
-  { cat: "sst", icon: "search",   title: "Auditoría Interna",              desc: "Evaluamos el estado real de tu SG-SST antes de cualquier visita oficial, identificando hallazgos con anticipación." },
-  { cat: "sst", icon: "alert",    title: "Gestión de Riesgos Laborales",   desc: "Identificación, valoración y control de peligros mediante matrices de riesgo actualizadas y planes de acción." },
-  { cat: "sst", icon: "folders",  title: "Gestión Documental",             desc: "Organización y digitalización de toda la documentación exigida por la normatividad vigente." },
-  { cat: "sst", icon: "flame",    title: "Plan de Emergencias",            desc: "Diseño e implementación de brigadas, simulacros y protocolos de respuesta ante emergencias organizacionales." },
+  { cat: "sst", icon: "shield",   title: "Diseño del SG-SST",               desc: "Estructuramos desde cero tu Sistema de Gestión de SST, cumpliendo cada estándar de la Resolución 0312 de 2019." },
+  { cat: "sst", icon: "refresh",  title: "Mantenimiento del SG-SST",        desc: "Mantenemos activo y actualizado tu sistema, garantizando cumplimiento continuo y documentación al día." },
+  { cat: "sst", icon: "fileText", title: "Reporte de Estándares Mínimos",   desc: "Acompañamiento completo para el reporte anual ante el Ministerio de Trabajo, sin contratiempos." },
+  { cat: "sst", icon: "search",   title: "Auditoría Interna",               desc: "Evaluamos el estado real de tu SG-SST antes de cualquier visita oficial, identificando hallazgos con anticipación." },
+  { cat: "sst", icon: "alert",    title: "Gestión de Riesgos Laborales",    desc: "Identificación, valoración y control de peligros mediante matrices de riesgo actualizadas y planes de acción." },
+  { cat: "sst", icon: "folders",  title: "Gestión Documental",              desc: "Organización y digitalización de toda la documentación exigida por la normatividad vigente." },
+  { cat: "sst", icon: "flame",    title: "Plan de Emergencias",             desc: "Diseño e implementación de brigadas, simulacros y protocolos de respuesta ante emergencias organizacionales." },
   { cat: "psi", icon: "brain",    title: "Atención Psicológica Individual", desc: "Consultas confidenciales orientadas al bienestar emocional, manejo del estrés y salud mental de los colaboradores." },
   { cat: "psi", icon: "chartBar", title: "Evaluación de Riesgo Psicosocial", desc: "Aplicación de la Batería del Ministerio para identificar factores de riesgo en el entorno laboral." },
-  { cat: "psi", icon: "users",    title: "Talleres de Bienestar Laboral",  desc: "Programas grupales sobre inteligencia emocional, comunicación asertiva, liderazgo y clima organizacional." },
-  { cat: "psi", icon: "heart",    title: "Prevención del Burnout",         desc: "Estrategias de intervención temprana para prevenir el agotamiento profesional y mejorar la productividad." },
-  { cat: "psi", icon: "handStop", title: "Intervención en Crisis",         desc: "Apoyo psicológico inmediato ante situaciones críticas en el entorno laboral, con protocolos estructurados." },
+  { cat: "psi", icon: "users",    title: "Talleres de Bienestar Laboral",   desc: "Programas grupales sobre inteligencia emocional, comunicación asertiva, liderazgo y clima organizacional." },
+  { cat: "psi", icon: "heart",    title: "Prevención del Burnout",          desc: "Estrategias de intervención temprana para prevenir el agotamiento profesional y mejorar la productividad." },
+  { cat: "psi", icon: "handStop", title: "Intervención en Crisis",          desc: "Apoyo psicológico inmediato ante situaciones críticas en el entorno laboral, con protocolos estructurados." },
 ];
 
 const filters = [
   { key: "sst", label: "Seguridad y Salud" },
   { key: "psi", label: "Psicología" },
 ];
+
+/* ── Card con hover ── */
+function ServiceCard({ item }) {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: hovered ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.1)",
+        border: hovered ? "1px solid rgba(255,255,255,0.45)" : "1px solid rgba(255,255,255,0.2)",
+        borderRadius: "16px",
+        padding: "1.4rem 1.2rem",
+        cursor: "pointer",
+        transform: hovered ? "translateY(-6px)" : "translateY(0)",
+        boxShadow: hovered ? "0 12px 30px rgba(0,0,0,0.2)" : "none",
+        transition: "transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease",
+      }}
+    >
+      {/* Icono */}
+      <div
+        style={{
+          width: "44px",
+          height: "44px",
+          borderRadius: "12px",
+          background: hovered ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.15)",
+          border: hovered ? "1px solid rgba(255,255,255,0.4)" : "1px solid rgba(255,255,255,0.25)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: "1rem",
+          transition: "background 0.3s ease, border-color 0.3s ease",
+        }}
+      >
+        {icons[item.icon]}
+      </div>
+
+      <h3 style={s.cardTitle}>{item.title}</h3>
+      <p style={s.cardDesc}>{item.desc}</p>
+      <span style={item.cat === "sst" ? s.tagSst : s.tagPsi}>
+        {item.cat === "sst" ? "SST" : "Psicología"}
+      </span>
+    </div>
+  );
+}
 
 export default function Servicios() {
   const [active, setActive] = useState("sst");
@@ -134,14 +180,7 @@ export default function Servicios() {
       {/* Grid */}
       <div style={s.grid}>
         {filtered.map((item) => (
-          <div key={item.title} style={s.card}>
-            <div style={s.iconBox}>{icons[item.icon]}</div>
-            <h3 style={s.cardTitle}>{item.title}</h3>
-            <p style={s.cardDesc}>{item.desc}</p>
-            <span style={item.cat === "sst" ? s.tagSst : s.tagPsi}>
-              {item.cat === "sst" ? "SST" : "Psicología"}
-            </span>
-          </div>
+          <ServiceCard key={item.title} item={item} />
         ))}
       </div>
 
@@ -214,23 +253,6 @@ const s = {
     gap: "16px",
     maxWidth: "960px",
     margin: "0 auto",
-  },
-  card: {
-    background: "rgba(255,255,255,0.1)",
-    border: "1px solid rgba(255,255,255,0.2)",
-    borderRadius: "16px",
-    padding: "1.4rem 1.2rem",
-  },
-  iconBox: {
-    width: "44px",
-    height: "44px",
-    borderRadius: "12px",
-    background: "rgba(255,255,255,0.15)",
-    border: "1px solid rgba(255,255,255,0.25)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: "1rem",
   },
   cardTitle: {
     fontSize: "14px",
