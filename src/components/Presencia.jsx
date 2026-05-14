@@ -240,7 +240,7 @@ export default function Presencia() {
 
             <iframe
               title="Mapa empresa"
-              src="https://maps.google.com/maps?q=6.6470161,-75.4598565&z=17&output=embed"
+              src="https://www.google.com/maps?q=6.6470161,-75.4598565&hl=es&z=17&output=embed"
               className="
                 absolute inset-0
                 w-full h-full
@@ -284,7 +284,7 @@ export default function Presencia() {
                 </div>
 
                 <a
-                  href="https://maps.google.com"
+                  href="https://maps.app.goo.gl/TCTzpczaQzsrAzwTA"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="

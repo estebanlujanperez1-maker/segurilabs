@@ -88,7 +88,7 @@ export default function Planes() {
             letterSpacing: "0.18em",
           }}
         >
-          Pricing
+         
         </span>
         <h1
           className="text-4xl md:text-5xl font-black text-gray-900 mb-5 leading-tight"
