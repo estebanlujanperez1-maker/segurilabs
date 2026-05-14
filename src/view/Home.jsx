@@ -12,6 +12,7 @@ import Comentarios from '../components/Comentarios'
 import Empresas from '../components/Empresas'
 
 
+
 const Home = () => {
   return (
     <div>
@@ -26,7 +27,7 @@ const Home = () => {
       
       <Equipo />
       <Preguntas />
-
+        
       <Footer />
     </div>
   )
