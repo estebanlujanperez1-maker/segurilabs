@@ -12,9 +12,10 @@ import Comentarios from '../components/Comentarios'
 import Empresas from '../components/Empresas'
 import Beneficios from '../components/Beneficios' 
 import Estadisticas from '../components/Estadisticas' 
-
-
-
+import Frase1 from '../components/Frase1' 
+import Separador2 from '../components/Separador2' 
+import Separador3 from '../components/Separador3'
+import Separadorcumplimiento from '../components/Separadorcumplimiento' 
 const Home = () => {
   return (
     <div>
@@ -26,9 +27,13 @@ const Home = () => {
       <Comentarios />
       <Estadisticas />  
       <Metodos />
+      <Frase1 />  
       <Planes />
+      <Separador2 />
       <Cotizacion />
+      <Separador3 />
 <Presencia />
+<Separadorcumplimiento /> 
       <Preguntas />
       <Footer />
     
