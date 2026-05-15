@@ -33,7 +33,7 @@ export default function Equipo() {
         <div className="text-center max-w-3xl mx-auto mb-16">
 
           <span className="inline-block text-green-600 font-semibold uppercase tracking-[0.3em] text-sm mb-4">
-            Nuestro equipo
+          
           </span>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">

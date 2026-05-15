@@ -10,6 +10,8 @@ import Cotizacion from '../components/Cotizacion'
 import Footer from '../components/Footer'
 import Comentarios from '../components/Comentarios'
 import Empresas from '../components/Empresas'
+import Beneficios from '../components/Beneficios' 
+import Estadisticas from '../components/Estadisticas' 
 
 
 
@@ -17,18 +19,19 @@ const Home = () => {
   return (
     <div>
       <Principal />
-      <Metodos />
-      <Servicios />
-      <Planes />
-      <Empresas/>
-      <Cotizacion />
+   <Servicios />
+      <Equipo   />
+      <Beneficios />
+      <Empresas />  
       <Comentarios />
-      <Presencia />
-      
-      <Equipo />
+      <Estadisticas />  
+      <Metodos />
+      <Planes />
+      <Cotizacion />
+<Presencia />
       <Preguntas />
-        
       <Footer />
+    
     </div>
   )
 }

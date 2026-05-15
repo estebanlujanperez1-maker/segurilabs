@@ -12,34 +12,36 @@ const Principal = () => {
           "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop')",
       }}
     >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Navbar */}
-      <header className="relative z-50">
+      <header className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/10">
 
-        <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-6">
+        <nav className="max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8 py-3">
 
           {/* Logo */}
-          <a href="#" className="flex items-center gap-4">
+          <a href="#" className="flex items-center gap-3">
 
             <img
               src={Logo1}
               alt="Segurilabs"
-              className="h-16 md:h-20 w-auto object-contain drop-shadow-xl"
+              className="h-11 md:h-13 w-auto object-contain"
             />
 
             <div>
-              <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-wide">
+              <h1 className="text-xl md:text-2xl font-extrabold text-white tracking-wide">
                 Segurilabs
               </h1>
 
-              <p className="text-sm text-green-200 font-medium">
+              <p className="text-[11px] md:text-xs text-green-200 font-medium">
                 Seguridad y Salud en el Trabajo
               </p>
             </div>
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-8">
 
             {[
               "Inicio",
@@ -51,7 +53,7 @@ const Principal = () => {
               <a
                 key={index}
                 href="#"
-                className="relative text-white text-base font-semibold transition-all duration-300 hover:text-green-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-white text-sm font-semibold transition-all duration-300 hover:text-green-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item}
               </a>
@@ -60,7 +62,7 @@ const Principal = () => {
             {/* Botón */}
             <a
               href="#"
-              className="rounded-2xl bg-green-500 px-5 py-3 text-sm font-semibold text-white shadow-xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
+              className="rounded-xl bg-green-500 px-4 py-2 text-xs font-semibold text-white shadow-xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
             >
               Cotizar ahora
             </a>
@@ -77,7 +79,7 @@ const Principal = () => {
               viewBox="0 0 24 24"
               strokeWidth={2}
               stroke="currentColor"
-              className="w-8 h-8"
+              className="w-7 h-7"
             >
               <path
                 strokeLinecap="round"
@@ -94,7 +96,7 @@ const Principal = () => {
 
         {/* Mobile menu */}
         {mobileMenu && (
-          <div className="lg:hidden mx-6 mt-2 rounded-3xl border border-white/10 bg-white/10 backdrop-blur-xl p-6 shadow-2xl">
+          <div className="lg:hidden mx-5 mb-4 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl p-5 shadow-2xl">
 
             <div className="flex flex-col gap-5">
 
@@ -108,7 +110,7 @@ const Principal = () => {
                 <a
                   key={index}
                   href="#"
-                  className="text-white font-medium hover:text-green-300 transition"
+                  className="text-white text-sm font-medium hover:text-green-300 transition"
                 >
                   {item}
                 </a>
@@ -116,7 +118,7 @@ const Principal = () => {
 
               <a
                 href="#"
-                className="mt-3 rounded-2xl bg-green-500 px-5 py-3 text-center text-white font-semibold hover:bg-green-400 transition"
+                className="mt-2 rounded-xl bg-green-500 px-4 py-3 text-center text-sm text-white font-semibold hover:bg-green-400 transition"
               >
                 Cotizar ahora
               </a>
@@ -127,12 +129,12 @@ const Principal = () => {
       </header>
 
       {/* Hero */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-6 pt-28">
 
         <div className="max-w-5xl text-center">
 
           {/* Título */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight text-white">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight text-white">
 
             Protegemos el
             <span className="bg-gradient-to-r from-green-300 to-emerald-500 bg-clip-text text-transparent">
@@ -143,62 +145,62 @@ const Principal = () => {
           </h1>
 
           {/* Texto */}
-          <p className="mt-8 text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+          <p className="mt-7 text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
 
             Implementamos soluciones integrales en Seguridad y Salud en el Trabajo,
-            gestión del riesgo y bienestar organizacional para empresas modernas.
+            gestión del riesgo y bienestar organizacional.
           </p>
 
           {/* Buttons */}
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
 
             <a
               href="#"
-              className="rounded-2xl bg-green-500 px-8 py-4 text-base font-bold text-white shadow-2xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
+              className="rounded-xl bg-green-500 px-7 py-3 text-sm font-bold text-white shadow-2xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
             >
               Solicitar asesoría
             </a>
 
             <a
               href="#"
-              className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md px-8 py-4 text-base font-semibold text-white hover:bg-white/20 transition-all duration-300"
+              className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-7 py-3 text-sm font-semibold text-white hover:bg-white/20 transition-all duration-300"
             >
               Ver servicios
             </a>
           </div>
 
           {/* Stats */}
-          <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-5">
 
-            <div className="rounded-3xl border border-white/10 bg-white/10 backdrop-blur-md p-6">
+            <div className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md p-5">
 
-              <h3 className="text-4xl font-black text-green-300">
+              <h3 className="text-3xl font-black text-green-300">
                 +150
               </h3>
 
-              <p className="mt-2 text-gray-300">
+              <p className="mt-2 text-sm text-gray-300">
                 Empresas asesoradas
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/10 backdrop-blur-md p-6">
+            <div className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md p-5">
 
-              <h3 className="text-4xl font-black text-green-300">
+              <h3 className="text-3xl font-black text-green-300">
                 98%
               </h3>
 
-              <p className="mt-2 text-gray-300">
+              <p className="mt-2 text-sm text-gray-300">
                 Clientes satisfechos
               </p>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/10 backdrop-blur-md p-6">
+            <div className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md p-5">
 
-              <h3 className="text-4xl font-black text-green-300">
+              <h3 className="text-3xl font-black text-green-300">
                 24/7
               </h3>
 
-              <p className="mt-2 text-gray-300">
+              <p className="mt-2 text-sm text-gray-300">
                 Acompañamiento profesional
               </p>
             </div>
