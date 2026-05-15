@@ -12,13 +12,6 @@ const Principal = () => {
           "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop')",
       }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-green-950/70"></div>
-
-      {/* Blur decorativo */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-green-500/20 blur-3xl rounded-full"></div>
-
-      <div className="absolute bottom-0 right-0 w-[30rem] h-[30rem] bg-emerald-400/10 blur-3xl rounded-full"></div>
 
       {/* Navbar */}
       <header className="relative z-50">
@@ -137,16 +130,6 @@ const Principal = () => {
       <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
 
         <div className="max-w-5xl text-center">
-
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-green-400/30 bg-green-500/10 px-5 py-2 backdrop-blur-md mb-8">
-
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-
-            <p className="text-sm font-medium text-green-200">
-              Expertos en Seguridad y Salud Laboral
-            </p>
-          </div>
 
           {/* Título */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight text-white">
