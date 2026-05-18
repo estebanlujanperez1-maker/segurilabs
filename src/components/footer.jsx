@@ -204,9 +204,8 @@ const Footer = () => {
         href="https://wa.me/573126544698"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 group"
+        className="fixed bottom-6 right-6 z-50"
       >
-
         <div
           className="
             relative
@@ -215,9 +214,6 @@ const Footer = () => {
             bg-white
             flex items-center justify-center
             shadow-[0_15px_40px_rgba(0,0,0,0.45)]
-            transition-all duration-300
-            hover:scale-110
-            animate-bounce
           "
         >
 
