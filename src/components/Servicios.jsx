@@ -1,4 +1,5 @@
-import { useState } from "react";
+ import { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Iconos SVG inline (Tabler Icons outline)
 const icons = {
@@ -187,6 +188,9 @@ export default function Servicios() {
       {/* CTA */}
       <div style={s.footer}>
         <a href="#contacto" style={s.cta}>Solicitar información</a>
+      <Link to="/servicios" style={s.ctaSecondary}>
+  Conozco todos nuestros servicios
+</Link>
       </div>
     </section>
   );
@@ -294,6 +298,10 @@ const s = {
   footer: {
     textAlign: "center",
     marginTop: "2.5rem",
+    display: "flex",
+    gap: "12px",
+    justifyContent: "center",
+    flexWrap: "wrap",
   },
   cta: {
     display: "inline-block",
@@ -305,5 +313,22 @@ const s = {
     padding: "13px 30px",
     borderRadius: "999px",
     textDecoration: "none",
+    transition: "all 0.3s ease",
+    cursor: "pointer",
+    border: "2px solid #fff",
+  },
+  ctaSecondary: {
+    display: "inline-block",
+    background: "transparent",
+    color: "#fff",
+    fontSize: "13px",
+    fontWeight: 700,
+    letterSpacing: "0.05em",
+    padding: "13px 30px",
+    borderRadius: "999px",
+    textDecoration: "none",
+    transition: "all 0.3s ease",
+    cursor: "pointer",
+    border: "2px solid #fff",
   },
 };

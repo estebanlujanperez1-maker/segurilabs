@@ -96,13 +96,14 @@ const Principal = () => {
             </a>
 
             {/* BOTÓN */}
-            <HashLink
-              smooth
-              to="/#cotizar"
+            <a
+              href="https://wa.me/573001112233"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl bg-green-500 px-4 py-2 text-xs font-semibold text-white shadow-xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
             >
               Cotizar ahora
-            </HashLink>
+            </a>
 
           </div>
 
@@ -184,13 +185,14 @@ const Principal = () => {
               </a>
 
               {/* Cotizar */}
-              <HashLink
-                smooth
-                to="/#cotizar"
+              <a
+                href="https://wa.me/573001112233"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-2 rounded-xl bg-green-500 px-4 py-3 text-center text-sm text-white font-semibold hover:bg-green-400 transition"
               >
                 Cotizar ahora
-              </HashLink>
+              </a>
 
             </div>
           </div>
@@ -224,13 +226,14 @@ const Principal = () => {
           {/* BUTTONS */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
 
-            <HashLink
-              smooth
-              to="/#cotizar"
+            <a
+              href="https://wa.me/573001112233"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl bg-green-500 px-7 py-3 text-sm font-bold text-white shadow-2xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
             >
               Solicitar asesoría
-            </HashLink>
+            </a>
 
             <HashLink
               smooth

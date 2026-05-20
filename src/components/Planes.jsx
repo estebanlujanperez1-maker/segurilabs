@@ -70,6 +70,16 @@ export default function Planes() {
     0
   );
 
+  const handleSelectPlan = (planId) => {
+    const selectedPlan = plans.find((p) => p.id === planId);
+    if (selectedPlan) {
+      const message = `Hola, estoy interesado en el plan ${selectedPlan.name} ($${selectedPlan.price}/mes). Quiero más información.`;
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappUrl = `https://wa.me/573001112233?text=${encodedMessage}`;
+      window.open(whatsappUrl, "_blank");
+    }
+  };
+
   return (
     <div
       className="min-h-screen flex flex-col items-center justify-center px-4 py-20"
@@ -198,6 +208,7 @@ export default function Planes() {
 
                 {/* Button */}
                 <button
+                  onClick={() => handleSelectPlan(plan.id)}
                   className="w-full py-3.5 rounded-xl text-sm font-bold tracking-wide transition-all duration-200"
                   style={
                     isSelected
@@ -227,7 +238,7 @@ export default function Planes() {
                     }
                   }}
                 >
-                  {isSelected ? "✦ Plan seleccionado" : "Elegir plan"}
+                  {isSelected ? "Plan seleccionado" : "Elegir plan"}
                 </button>
               </div>
             </div>
