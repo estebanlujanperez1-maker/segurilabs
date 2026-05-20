@@ -12,15 +12,15 @@ const Principal = () => {
           "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2070&auto=format&fit=crop')",
       }}
     >
-      {/* Overlay */}
+   
       <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* Navbar */}
+      {/* empieza el navbar */}
       <header className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/10">
 
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8 py-3">
 
-          {/* Logo */}
+          {/* Logo segurilabs */}
           <a href="#" className="flex items-center gap-3">
 
             <img
@@ -40,7 +40,7 @@ const Principal = () => {
             </div>
           </a>
 
-          {/* Desktop Menu */}
+       
           <div className="hidden lg:flex items-center gap-8">
 
             {[
