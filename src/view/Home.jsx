@@ -19,9 +19,12 @@ export default function Home() {
   return (
     <>
 {/* No modificar nada rompen navegacion */}
-      {/* navegacion a inicio */}
+    
       <section id="inicio">
         <Principal />
+      </section>
+         <section id="servicios">
+        <Servicios />
       </section>
 
       <Beneficios />
@@ -39,11 +42,6 @@ export default function Home() {
       <Separador2 />
 
       <Separador3 />
-
-      {/* navegacion a servicios*/}
-      <section id="servicios">
-        <Servicios />
-      </section>
 
       <Planes />
 
