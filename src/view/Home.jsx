@@ -27,38 +27,26 @@ export default function Home() {
         <Servicios />
       </section>
 
-      <Beneficios />
-
-      <Empresas />
-
-      <Comentarios />
-
-      <Estadisticas />
-
       <Metodos />
 
-      <Frase1 />
-
-      <Separador2 />
-
-      <Separador3 />
-
-      <Planes />
-
-      {/* navegacion a equipo */}
-      <section id="equipo">
+      <Beneficios />
+    <section id="equipo">
         <Equipo />
       </section>
-
-      <Presencia />
-
-      <Preguntas />
-
-      {/* navegacion a cotizar */}
-      <section id="cotizar">
+<Frase1 />
+<Comentarios  />
+<Estadisticas />
+     <Planes />
+<Separador2 />
+<Presencia />
+<Separador3 />
+     <section id="cotizar">
         <Cotizacion />
       </section>
-
+      <Separador3 />
+<Empresas />
+<Estadisticas />
+      <Preguntas />
       <Footer />
 
     </>
