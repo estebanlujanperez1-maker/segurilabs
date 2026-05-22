@@ -14,6 +14,7 @@ import Servicios from "../components/Servicios";
 import Equipo from "../components/Equipo";
 import Cotizacion from "../components/Cotizacion";
 import Footer from "../components/Footer";
+import Separadorcumplimiento from "../components/Separadorcumplimiento";
 
 export default function Home() {
   return (
@@ -45,7 +46,7 @@ export default function Home() {
       </section>
       <Separador3 />
 <Empresas />
-<Estadisticas />
+<Separadorcumplimiento /> 
       <Preguntas />
       <Footer />
 

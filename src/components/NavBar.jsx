@@ -19,13 +19,11 @@ const NavBar = () => {
             to="/#inicio"
             className="flex items-center gap-3 group"
           >
-            <div className="bg-white p-2 rounded-2xl shadow-sm border border-emerald-100 group-hover:scale-105 transition-all duration-300">
-              <img
-                src={Logo1}
-                alt="Segurilabs"
-                className="h-10 w-auto object-contain"
-              />
-            </div>
+            <img
+              src={Logo1}
+              alt="Segurilabs"
+              className="h-16 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+            />
 
             <div className="leading-tight">
               <h1 className="text-xl md:text-2xl font-black text-slate-800 tracking-tight">
