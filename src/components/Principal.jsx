@@ -245,45 +245,10 @@ const Principal = () => {
 
           </div>
 
-          {/* STATS */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-5">
-
-            <div className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md p-5">
-
-              <h3 className="text-3xl font-black text-green-300">
-                +150
-              </h3>
-
-              <p className="mt-2 text-sm text-gray-300">
-                Empresas asesoradas
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md p-5">
-
-              <h3 className="text-3xl font-black text-green-300">
-                98%
-              </h3>
-
-              <p className="mt-2 text-sm text-gray-300">
-                Clientes satisfechos
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-md p-5">
-
-              <h3 className="text-3xl font-black text-green-300">
-                24/7
-              </h3>
-
-              <p className="mt-2 text-sm text-gray-300">
-                Acompañamiento profesional
-              </p>
-            </div>
-
+         
           </div>
         </div>
-      </div>
+     
     </section>
   );
 };
