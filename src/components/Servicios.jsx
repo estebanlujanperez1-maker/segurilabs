@@ -82,11 +82,10 @@ const services = [
   { cat: "sst", icon: "alert",    title: "Gestión de Riesgos Laborales",    desc: "Identificación, valoración y control de peligros mediante matrices de riesgo actualizadas y planes de acción." },
   { cat: "sst", icon: "folders",  title: "Gestión Documental",              desc: "Organización y digitalización de toda la documentación exigida por la normatividad vigente." },
   { cat: "sst", icon: "flame",    title: "Plan de Emergencias",             desc: "Diseño e implementación de brigadas, simulacros y protocolos de respuesta ante emergencias organizacionales." },
-  { cat: "psi", icon: "brain",    title: "Atención Psicológica Individual", desc: "Consultas confidenciales orientadas al bienestar emocional, manejo del estrés y salud mental de los colaboradores." },
-  { cat: "psi", icon: "chartBar", title: "Evaluación de Riesgo Psicosocial", desc: "Aplicación de la Batería del Ministerio para identificar factores de riesgo en el entorno laboral." },
-  { cat: "psi", icon: "users",    title: "Talleres de Bienestar Laboral",   desc: "Programas grupales sobre inteligencia emocional, comunicación asertiva, liderazgo y clima organizacional." },
-  { cat: "psi", icon: "heart",    title: "Prevención del Burnout",          desc: "Estrategias de intervención temprana para prevenir el agotamiento profesional y mejorar la productividad." },
-  { cat: "psi", icon: "handStop", title: "Intervención en Crisis",          desc: "Apoyo psicológico inmediato ante situaciones críticas en el entorno laboral, con protocolos estructurados." },
+  { cat: "psi", icon: "brain",    title: "Atención Psicológica Individual", desc: "Acompañamiento psicológico personalizado para adultos y adolescentes que atraviesan procesos de duelo, ansiedad, estrés o dificultades relacionales. Sesiones presenciales o virtuales, en un espacio seguro y confidencial." },
+  { cat: "psi", icon: "chartBar", title: "Capacitaciones", desc: "Formación dirigida a equipos u organizaciones en temas de salud mental, regulación emocional y habilidades psicológicas aplicadas al entorno laboral o comunitario." },
+  { cat: "psi", icon: "users",    title: "Talleres de Bienestar Laboral",   desc: "Espacios de aprendizaje y reflexión en grupo orientados al bienestar emocional. Una oportunidad para explorar herramientas prácticas junto a otros, en un ambiente de confianza y apoyo mutuo." },
+   { cat: "psi", icon: "handStop", title: "Intervención en Crisis",          desc: "Apoyo psicológico inmediato ante situaciones críticas en el entorno laboral, con protocolos estructurados." },
 ];
 
 const filters = [
