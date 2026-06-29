@@ -188,9 +188,7 @@ export default function Servicios() {
       {/* CTA */}
       <div style={s.footer}>
         <a href="#contacto" style={s.cta}>Solicitar información</a>
-      <Link to="/servicios" style={s.ctaSecondary}>
-  Conozco todos nuestros servicios
-</Link>
+      
       </div>
     </section>
   );

@@ -8,14 +8,7 @@ const partners = [
   { name: "Contribuutto", abbr: "CO", color: "#555555" },
   { name: "Luis Mejia", abbr: "LM", color: "#333333" },
   { name: "Casa Korea", abbr: "CK", color: "#c0392b" },
-  { name: "La Cachaquera", abbr: "LC", color: "#27ae60" },
-  { name: "Más Motos", abbr: "MM", color: "#2ecc71" },
-  { name: "Lácteos La Ensenada", abbr: "LE", color: "#f1c40f" },
-  { name: "Salto del Buey", abbr: "SB", color: "#16a085" },
-  { name: "Campo Libre", abbr: "CL", color: "#8bc34a" },
-  { name: "CH Industria", abbr: "CH", color: "#444444" },
-  { name: "Hotel Calaos", abbr: "HC", color: "#2980b9" },
-  { name: "Universidad del Atlántico", abbr: "UA", color: "#8e44ad" },
+
 ];
 
 const stats = [

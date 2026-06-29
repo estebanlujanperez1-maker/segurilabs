@@ -64,7 +64,7 @@ const Principal = () => {
               to="/nosotros"
               className="relative text-white text-sm font-semibold transition-all duration-300 hover:text-green-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
             >
-              Nosotros
+              Quienes somos
             </Link>
 
             {/* Servicios */}
@@ -86,20 +86,15 @@ const Principal = () => {
             </HashLink>
 
             {/* Contacto */}
-            <a
-              href="https://wa.me/573001112233"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/blog"
               className="relative text-white text-sm font-semibold transition-all duration-300 hover:text-green-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
             >
-              Contacto
-            </a>
+              Blog
+            </Link>
 
             {/* BOTÓN */}
             <a
-              href="https://wa.me/573001112233"
-              target="_blank"
-              rel="noopener noreferrer"
               className="rounded-xl bg-green-500 px-4 py-2 text-xs font-semibold text-white shadow-xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
             >
               Cotizar ahora
