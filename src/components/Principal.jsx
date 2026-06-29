@@ -33,7 +33,7 @@ const Principal = () => {
             <img
               src={Logo1}
               alt="Segurilabs"
-              className="h-11 md:h-13 w-auto object-contain"
+              className="h-20 md:h-25 w-auto object-contain"
             />
 
             <div>

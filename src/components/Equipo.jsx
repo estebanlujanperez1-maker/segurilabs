@@ -3,16 +3,16 @@ import React from "react";
 export default function Equipo() {
   const team = [
     {
-      name: "Nombre Apellido",
+      name: "Luisa Lopera",
       role: "Coordinadora SG-SST",
-      bio: "Especialista en seguridad y salud en el trabajo con más de 8 años acompañando empresas en su implementación normativa.",
+      bio: "Psicóloga con práctica privada híbrida, mi trabajo se centra en acompañar duelo, ansiedad, estrés y dificultades relacionales en adultos. También acompaño a adolescentes. Combino rigor clínico con una mirada cercana y humana, cuidando tanto la documentación formal como el vínculo terapéutico a lo largo del proceso.",
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com",
     },
     {
-      name: "Nombre Apellido",
+      name: "Milena Palacios",
       role: "Psicólogo Organizacional",
-      bio: "Experto en bienestar laboral, clima organizacional y manejo del estrés. Acompaña procesos de intervención psicosocial en empresas de todos los sectores.",
+      bio: "Tecnóloga en Seguridad y Salud en el Trabajo, apasionada por el bienestar de las personas y la creación de entornos laborales seguros y saludables. Me caracterizo por ser una persona cercana, creativa y comprometida, enfocada en encontrar soluciones prácticas que promuevan el cuidado, la prevención y el crecimiento de las organizaciones y sus colaboradores.",
       linkedin: "https://linkedin.com",
       instagram: "https://instagram.com",
     },

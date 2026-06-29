@@ -3,37 +3,24 @@ import { ShieldCheck } from "lucide-react";
 
 export default function Separador2() {
   return (
-    <section className="w-full bg-green-200 py-8 px-6">
-
-      <div className="max-w-5xl mx-auto rounded-3xl bg-white p-6 shadow-lg border border-green-300">
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-          {[
-            "SG-SST",
-            "Plan de emergencias",
-            "Capacitaciones",
-            "Riesgo psicosocial",
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-3"
-            >
-
-              <div className="w-11 h-11 rounded-2xl bg-green-600 text-white flex items-center justify-center">
-                <ShieldCheck size={20} />
-              </div>
-
-              <p className="font-semibold text-gray-800">
-                {item}
-              </p>
-
-            </div>
-          ))}
-        </div>
-
+    <div className="w-full bg-green-500 px-4 py-4 text-center text-white font-semibold hover:bg-green-400 transition duration-300 shadow-sm">
+      <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+        {[
+          "SG-SST",
+          "Plan de emergencias",
+          "Capacitaciones",
+          "Riesgo psicosocial",
+        ].map((item, index) => (
+          <div key={index} className="flex items-center gap-2 whitespace-nowrap text-sm md:text-base">
+            {/* Icono discreto */}
+            <span className="opacity-90 shrink-0">
+              <ShieldCheck size={16} />
+            </span>
+            {/* Texto limpio */}
+            <span className="tracking-wide">{item}</span>
+          </div>
+        ))}
       </div>
-
-    </section>
+    </div>
   );
 }

@@ -15,6 +15,7 @@ import Equipo from "../components/Equipo";
 import Cotizacion from "../components/Cotizacion";
 import Footer from "../components/Footer";
 import Separadorcumplimiento from "../components/Separadorcumplimiento";
+import Separador4 from "../components/Separador4";
 
 export default function Home() {
   return (
@@ -44,7 +45,7 @@ export default function Home() {
      <section id="cotizar">
         <Cotizacion />
       </section>
-      <Separador3 />
+      <Separador4 />
 <Empresas />
 <Separadorcumplimiento /> 
       <Preguntas />
