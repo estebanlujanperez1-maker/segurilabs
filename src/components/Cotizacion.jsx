@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { ShieldCheck, PhoneCall } from "lucide-react";
 
 export default function Cotizacion() {
+  const [formData, setFormData] = useState({
+    nombre: '',
+    apellido: '',
+    empresa: '',
+    correo: '',
+    telefono: '',
+    tipoAsesoria: '',
+    mensaje: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/api/solicitudes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      const data = await response.json();
+      if (response.ok) {
+        alert('¡Solicitud enviada con éxito!');
+      } else {
+        alert('Error: ' + data.mensaje);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error de conexión con el servidor.');
+    }
+  };
+
   return (
     <section className="relative isolate overflow-hidden bg-gradient-to-b from-white to-green-50 py-24 px-4 sm:px-6 lg:px-8">
       
@@ -96,11 +133,15 @@ export default function Cotizacion() {
                   Nombre
                 </label>
 
-                <input
-                  type="text"
-                  placeholder="Tu nombre"
-                  className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
-                />
+<input
+  type="text"
+  name="nombre"
+  value={formData.nombre}
+  onChange={handleChange}
+  placeholder="Tu nombre"
+  className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
+  required
+/>
               </div>
 
               <div>
@@ -110,9 +151,12 @@ export default function Cotizacion() {
 
                 <input
                   type="text"
-                  placeholder="Tu apellido"
-                  className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
-                />
+  name="apellido"
+  value={formData.apellido}
+  onChange={handleChange}
+  placeholder="Tu apellido"
+  className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
+/>
               </div>
             </div>
 
@@ -122,11 +166,14 @@ export default function Cotizacion() {
                 Empresa
               </label>
 
-              <input
-                type="text"
-                placeholder="Nombre de tu empresa"
-                className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
-              />
+<input
+  type="text"
+  name="empresa"
+  value={formData.empresa}
+  onChange={handleChange}
+  placeholder="Empresa"
+  className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
+/>
             </div>
 
             {/* Email */}
@@ -135,11 +182,15 @@ export default function Cotizacion() {
                 Correo electrónico
               </label>
 
-              <input
-                type="email"
-                placeholder="correo@empresa.com"
-                className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
-              />
+<input
+  type="email"
+  name="correo"
+  value={formData.correo}
+  onChange={handleChange}
+  placeholder="Correo electrónico"
+  className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
+  required
+/>
             </div>
 
             {/* Teléfono */}
@@ -148,11 +199,15 @@ export default function Cotizacion() {
                 Número de teléfono
               </label>
 
-              <input
-                type="tel"
-                placeholder="+57 300 000 0000"
-                className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
-              />
+<input
+     type="tel"
+     name="telefono"
+     value={formData.telefono}
+     onChange={handleChange}
+     placeholder="Número de teléfono"
+     className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
+     required
+   />
             </div>
 
             {/* Mensaje */}
@@ -161,19 +216,26 @@ export default function Cotizacion() {
                 Mensaje
               </label>
 
-              <textarea
-                rows={5}
-                placeholder="Cuéntanos qué necesitas..."
-                className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none resize-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
-              />
+    <textarea
+  name="mensaje"
+  value={formData.mensaje}
+  onChange={handleChange}
+  rows={5}
+  placeholder="Mensaje"
+  className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 text-gray-900 outline-none resize-none transition-all focus:border-green-500 focus:ring-4 focus:ring-green-100"
+/>
             </div>
 
             {/* Checkbox */}
             <div className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                className="mt-1 h-4 w-4 rounded border-gray-300 text-green-500 focus:ring-green-400"
-              />
+       <input
+  type="checkbox"
+  name="aceptaTerminos"
+  checked={formData.aceptaTerminos}
+  onChange={handleChange}
+  className="mt-1 h-4 w-4 rounded border-gray-300 text-green-500 focus:ring-green-400"
+  required
+/>
 
               <p className="text-sm text-gray-600 leading-relaxed">
                 Acepto la política de privacidad y el tratamiento de datos personales.
