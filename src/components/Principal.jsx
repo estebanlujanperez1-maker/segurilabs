@@ -220,15 +220,13 @@ const Principal = () => {
 
           {/* BUTTONS */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-
-            <a
-              href="https://wa.me/573001112233"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl bg-green-500 px-7 py-3 text-sm font-bold text-white shadow-2xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
-            >
-              Solicitar asesoría
-            </a>
+<HashLink
+  smooth
+  to="/#cotizar"
+  className="rounded-xl bg-green-500 px-7 py-3 text-sm font-bold text-white shadow-2xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
+>
+  Solicitar asesoría
+</HashLink>
 
             <HashLink
               smooth

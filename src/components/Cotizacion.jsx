@@ -123,7 +123,7 @@ export default function Cotizacion() {
         {/* Formulario */}
         <div className="bg-white/90 backdrop-blur-xl border border-green-100 shadow-2xl rounded-3xl p-8 md:p-10">
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
 
             {/* Nombre y apellido */}
             <div className="grid sm:grid-cols-2 gap-5">
