@@ -20,7 +20,7 @@ const Principal = () => {
       {/* WIDGET FLOTANTE INNOVADOR - DIAGNÓSTICO GRATIS (LADO IZQUIERDO) */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50 group">
         <a
-          href="https://wa.me/573001112233?text=Hola,%20quisiera%20solicitar%20mi%20Diagnóstico%20Gratis"
+          href="https://wa.me/573015826390?text=Hola,%20quisiera%20solicitar%20mi%20Diagnóstico%20Gratis"
           target="_blank"
           rel="noopener noreferrer"
           className="relative flex items-center gap-3 bg-black/70 backdrop-blur-xl border-y border-r border-green-500/40 p-2.5 sm:p-3 rounded-r-2xl shadow-[0_0_25px_rgba(34,197,94,0.25)] transition-all duration-300 hover:translate-x-2 hover:border-green-400 hover:shadow-[0_0_35px_rgba(34,197,94,0.5)] group"

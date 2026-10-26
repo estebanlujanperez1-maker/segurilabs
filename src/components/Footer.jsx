@@ -70,10 +70,10 @@ const Footer = () => {
                 </p>
 
                 <a
-                  href="mailto:contacto@empresa.com"
+                  href="mailto:segurilabsst@gmail.com"
                   className="text-white font-semibold hover:text-green-200 transition"
                 >
-                  contacto@empresa.com
+                  segurilabsst@gmail.com
                 </a>
 
               </div>
@@ -111,11 +111,12 @@ const Footer = () => {
               </h3>
 
               <p className="text-white">
-                Calle 123 #45-67
+                Cl. 30 
+                Local 209
               </p>
 
               <p className="text-green-100 mt-1">
-                Cali, Colombia
+                Santa Rosa de Osos, Colombia
               </p>
 
             </div>
@@ -128,10 +129,10 @@ const Footer = () => {
               </h3>
 
               <a
-                href="tel:+573000000000"
+                href="tel:+573015826390"
                 className="text-white hover:text-green-200 transition"
               >
-                +57 300 000 0000
+                +57 301 5826390
               </a>
 
             </div>
@@ -201,7 +202,7 @@ const Footer = () => {
 
       {/* WhatsApp Float */}
       <a
-        href="https://wa.me/573126544698"
+        href="https://wa.me/573015826390"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50"

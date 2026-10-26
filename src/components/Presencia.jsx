@@ -102,7 +102,7 @@ export default function Presencia() {
                   <p className="text-gray-600 leading-relaxed">
                     Centro Comercial Plaza Real
                     <br />
-                    Bello, Antioquia
+                    Santa Rosa de Osos, Antioquia
                     <br />
                     Colombia
                   </p>
@@ -147,12 +147,12 @@ export default function Presencia() {
 
                     <p className="text-green-50 flex items-center gap-2">
                       <Phone className="w-4 h-4" />
-                      +57 300 000 0000
+                      +57 301 5826390
                     </p>
 
                     <p className="text-green-50 flex items-center gap-2">
                       <Mail className="w-4 h-4" />
-                      contacto@segurilabs.com
+                      segurilabsst@gmail.com
                     </p>
 
                   </div>

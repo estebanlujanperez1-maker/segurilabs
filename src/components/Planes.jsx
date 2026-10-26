@@ -1,44 +1,59 @@
+
 import { useState } from "react";
 
 const plans = [
   {
-    id: "freelancer",
-    name: "Freelancer",
-    description: "Lo esencial para ofrecer tu mejor trabajo a clientes.",
-    price: 19,
+    id: "esencial",
+    name: "Paquete 1",
+    subtitle: "SG-SST Esencial",
+    description:
+      "Para pequeños negocios, oficinas, comercios y establecimientos de baja complejidad.",
+    coverage: "7 estándares mínimos",
+    workers: "Hasta 10 trabajadores",
+    risk: "Riesgos I, II y III",
     features: [
-      "5 productos",
-      "Hasta 1,000 suscriptores",
-      "Analítica básica",
-      "Soporte en 48 horas",
+      "Documentos aplicables al SG-SST",
+      "Plan de trabajo anual",
+      "Soportes básicos requeridos",
+      "Requisitos según el tamaño y riesgo de la empresa",
     ],
     popular: false,
   },
   {
-    id: "startup",
-    name: "Startup",
-    description: "Un plan que escala con tu negocio en rápido crecimiento.",
-    price: 49,
+    id: "integral",
+    name: "Paquete 2",
+    subtitle: "SG-SST Integral",
+    description:
+      "Para empresas que necesitan una gestión más amplia de seguridad y salud en el trabajo.",
+    coverage: "21 estándares mínimos",
+    workers: "De 11 a 50 trabajadores",
+    risk: "Riesgos I, II y III",
     features: [
-      "25 productos",
-      "Hasta 10,000 suscriptores",
-      "Analítica avanzada",
-      "Soporte en 24 horas",
-      "Automatizaciones de marketing",
+      "Gestión de peligros y riesgos",
+      "Capacitación de trabajadores",
+      "Gestión de comités",
+      "Inspecciones de seguridad",
+      "Preparación y atención de emergencias",
+      "Seguimiento al plan anual",
     ],
     popular: true,
   },
   {
-    id: "enterprise",
-    name: "Enterprise",
-    description: "Soporte dedicado e infraestructura para tu empresa.",
-    price: 99,
+    id: "avanzado",
+    name: "Paquete 3",
+    subtitle: "SG-SST Avanzado",
+    description:
+      "Para empresas que requieren una gestión documentada y operativa más robusta.",
+    coverage: "Gestión avanzada",
+    workers: "Más de 50 trabajadores, o hasta 50 con riesgo IV o V",
+    risk: "Cualquier clase de riesgo cuando corresponda",
     features: [
-      "Productos ilimitados",
-      "Suscriptores ilimitados",
-      "Analítica avanzada",
-      "Soporte dedicado en 1 hora",
-      "Automatizaciones de marketing",
+      "Evaluación y seguimiento del SG-SST",
+      "Auditorías",
+      "Indicadores de gestión",
+      "Vigilancia de la salud",
+      "Controles según los riesgos identificados",
+      "Gestión documental y operativa",
     ],
     popular: false,
   },
@@ -63,58 +78,62 @@ const CheckIcon = () => (
 );
 
 export default function Planes() {
-  const [selected, setSelected] = useState("startup");
-
-  const maxFeatures = plans.reduce(
-    (max, p) => (p.features.length > max ? p.features.length : max),
-    0
-  );
+  const [selected, setSelected] = useState("integral");
 
   const handleSelectPlan = (planId) => {
-    const selectedPlan = plans.find((p) => p.id === planId);
-    if (selectedPlan) {
-      const message = `Hola, estoy interesado en el plan ${selectedPlan.name} ($${selectedPlan.price}/mes). Quiero más información.`;
-      const encodedMessage = encodeURIComponent(message);
-      const whatsappUrl = `https://wa.me/573001112233?text=${encodedMessage}`;
-      window.open(whatsappUrl, "_blank");
-    }
+    const selectedPlan = plans.find((plan) => plan.id === planId);
+
+    if (!selectedPlan) return;
+
+    const message =
+      `Hola, estoy interesado/a en el ${selectedPlan.name}: ` +
+      `${selectedPlan.subtitle}. Quiero conocer el alcance, los requisitos ` +
+      `y la cotización para mi empresa.`;
+
+    const whatsappUrl =
+      `https://wa.me/573015826390?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4 py-20"
+      className="min-h-screen flex flex-col items-center px-4 py-20"
       style={{
         background: "#ffffff",
         fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
       }}
     >
-      {/* Header */}
-      <div className="text-center mb-16 max-w-2xl">
+      {/* Encabezado */}
+      <div className="text-center mb-16 max-w-3xl">
         <span
           className="inline-block text-xs font-semibold uppercase mb-4 px-4 py-1.5 rounded-full"
           style={{
-            color: "#7c3aed",
-            background: "#ede9fe",
+            color: "#15803d",
+            background: "#dcfce7",
             letterSpacing: "0.18em",
           }}
         >
-         
+          Servicios de seguridad y salud en el trabajo
         </span>
+
         <h1
           className="text-4xl md:text-5xl font-black text-gray-900 mb-5 leading-tight"
           style={{ letterSpacing: "-0.02em" }}
         >
-          Precios que crecen{" "}
-          <span style={{ color: "#16a34a" }}>contigo</span>
+          Encuentra el paquete{" "}
+          <span style={{ color: "#16a34a" }}>SG-SST</span>{" "}
+          para tu empresa
         </h1>
+
         <p className="text-base md:text-lg leading-relaxed text-gray-500">
-          Elige un plan asequible repleto de las mejores funciones para
-          fidelizar a tu audiencia, crear lealtad y aumentar ventas.
+          Soluciones de seguridad y salud en el trabajo adaptadas al tamaño
+          de tu empresa, su clase de riesgo y sus necesidades de gestión.
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="flex flex-col md:flex-row items-end justify-center gap-5 w-full max-w-5xl">
+      {/* Tarjetas */}
+      <div className="flex flex-col md:flex-row md:items-stretch justify-center gap-5 w-full max-w-6xl">
         {plans.map((plan) => {
           const isSelected = selected === plan.id;
 
@@ -122,100 +141,94 @@ export default function Planes() {
             <div
               key={plan.id}
               onClick={() => setSelected(plan.id)}
-              className="relative flex flex-col w-full md:w-80 rounded-2xl cursor-pointer"
+              className="relative flex flex-col w-full md:flex-1 rounded-2xl cursor-pointer"
               style={{
-                border: isSelected ? "2px solid #4ade80" : "2px solid #e5e7eb",
+                border: isSelected
+                  ? "2px solid #4ade80"
+                  : "2px solid #e5e7eb",
                 background: isSelected ? "#f0fdf4" : "#ffffff",
-                transform: isSelected ? "translateY(-18px)" : "translateY(0px)",
-                transition: "all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                transform: isSelected ? "translateY(-6px)" : "translateY(0)",
+                transition: "all 0.3s ease",
                 boxShadow: isSelected
-                  ? "0 20px 40px rgba(74,222,128,0.18), 0 4px 16px rgba(0,0,0,0.06)"
-                  : "0 2px 12px rgba(0,0,0,0.07)",
-                zIndex: isSelected ? 10 : 1,
+                  ? "0 16px 35px rgba(74,222,128,0.16)"
+                  : "0 2px 12px rgba(0,0,0,0.06)",
               }}
             >
-              {/* Popular badge */}
               {plan.popular && (
                 <div
-                  className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold z-20 whitespace-nowrap"
-                  style={{
-                    background: "#7c3aed",
-                    color: "#ffffff",
-                    letterSpacing: "0.06em",
-                  }}
+                  className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap"
+                  style={{ background: "#15803d", color: "#ffffff" }}
                 >
-                  ✦ Más popular
+                  Recomendado
                 </div>
               )}
 
-              {/* Card content */}
-              <div className="flex flex-col flex-1 p-7">
-                {/* Plan name */}
-                <h2
-                  className="text-xl font-bold mb-1"
-                  style={{
-                    color: isSelected ? "#15803d" : "#111827",
-                    transition: "color 0.3s ease",
-                  }}
-                >
+              <div className="flex flex-col flex-1 p-6 md:p-7">
+                <p className="text-xs uppercase tracking-widest font-semibold text-gray-400 mb-2">
                   {plan.name}
+                </p>
+
+                <h2
+                  className="text-2xl font-black mb-3"
+                  style={{ color: isSelected ? "#15803d" : "#111827" }}
+                >
+                  {plan.subtitle}
                 </h2>
 
-                {/* Description */}
-                <p className="text-sm mb-6 leading-relaxed text-gray-400">
+                <p className="text-sm mb-6 leading-relaxed text-gray-500">
                   {plan.description}
                 </p>
 
-                {/* Price */}
-                <div className="flex items-end gap-1 mb-8">
-                  <span
-                    className="text-5xl font-black leading-none"
-                    style={{
-                      color: isSelected ? "#16a34a" : "#111827",
-                      transition: "color 0.3s ease",
-                    }}
-                  >
-                    ${plan.price}
-                  </span>
-                  <span className="text-sm mb-2 text-gray-400">/mes</span>
+                <div className="rounded-xl bg-white border border-gray-100 p-4 mb-6">
+                  <p className="text-sm font-bold text-green-700 mb-2">
+                    {plan.coverage}
+                  </p>
+
+                  <p className="text-sm text-gray-700 mb-2">
+                    <strong>Personal:</strong> {plan.workers}
+                  </p>
+
+                  <p className="text-sm text-gray-700">
+                    <strong>Clase de riesgo:</strong> {plan.risk}
+                  </p>
                 </div>
 
-                {/* Features */}
-                <ul className="flex flex-col gap-3 mb-10 flex-1">
-                  {[
-                    ...plan.features,
-                    ...Array(maxFeatures - plan.features.length).fill(null),
-                  ].map((feature, i) => (
+                <h3 className="text-sm font-bold text-gray-900 mb-4">
+                  ¿Qué incluye?
+                </h3>
+
+                <ul className="flex flex-col gap-3 mb-8 flex-1">
+                  {plan.features.map((feature) => (
                     <li
-                      key={i}
-                      className="flex items-center gap-3 text-sm"
-                      style={{
-                        color: feature ? "#374151" : "transparent",
-                        minHeight: "20px",
-                      }}
+                      key={feature}
+                      className="flex items-start gap-3 text-sm text-gray-600"
                     >
-                      {feature && (
-                        <>
-                          <span style={{ color: isSelected ? "#16a34a" : "#7c3aed" }}>
-                            <CheckIcon />
-                          </span>
-                          {feature}
-                        </>
-                      )}
+                      <span
+                        className="mt-0.5"
+                        style={{
+                          color: isSelected ? "#16a34a" : "#15803d",
+                        }}
+                      >
+                        <CheckIcon />
+                      </span>
+
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* Button */}
                 <button
-                  onClick={() => handleSelectPlan(plan.id)}
-                  className="w-full py-3.5 rounded-xl text-sm font-bold tracking-wide transition-all duration-200"
+                  type="button"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    handleSelectPlan(plan.id);
+                  }}
+                  className="w-full py-3.5 px-4 rounded-xl text-sm font-bold transition-all duration-200"
                   style={
                     isSelected
                       ? {
                           background: "#16a34a",
                           color: "#ffffff",
-                          boxShadow: "0 4px 14px rgba(22,163,74,0.25)",
                         }
                       : {
                           background: "#f3f4f6",
@@ -223,22 +236,8 @@ export default function Planes() {
                           border: "1px solid #e5e7eb",
                         }
                   }
-                  onMouseEnter={(e) => {
-                    if (!isSelected) {
-                      e.currentTarget.style.background = "#ede9fe";
-                      e.currentTarget.style.color = "#7c3aed";
-                      e.currentTarget.style.borderColor = "#c4b5fd";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isSelected) {
-                      e.currentTarget.style.background = "#f3f4f6";
-                      e.currentTarget.style.color = "#374151";
-                      e.currentTarget.style.borderColor = "#e5e7eb";
-                    }
-                  }}
                 >
-                  {isSelected ? "Plan seleccionado" : "Elegir plan"}
+                  Solicitar información
                 </button>
               </div>
             </div>
@@ -246,9 +245,11 @@ export default function Planes() {
         })}
       </div>
 
-      {/* Footer note */}
-      <p className="mt-14 text-xs text-center text-gray-300 tracking-wide">
-        Sin contratos · Cancela cuando quieras · Todos los precios en USD
+      <p className="mt-10 max-w-3xl text-center text-xs leading-relaxed text-gray-400">
+        La aplicación de los estándares mínimos debe verificarse según el
+        número de trabajadores y la clasificación de riesgo de la empresa.
+        El alcance definitivo se establece de acuerdo con sus condiciones
+        y requisitos aplicables.
       </p>
     </div>
   );
