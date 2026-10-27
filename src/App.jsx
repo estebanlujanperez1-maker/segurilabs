@@ -4,16 +4,15 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from './view/Home'
 
-import Blog from './view/Blog'
 
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      
+  
     
 
-      <Route path='/blog' element={<Blog />} />
+     
      
     </Routes>
   )

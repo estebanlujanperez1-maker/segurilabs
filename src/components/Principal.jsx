@@ -6,7 +6,6 @@ import { HashLink } from "react-router-hash-link";
 const Principal = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
-
   const phone = "3015826390";
   
   const diagnosticMessage = encodeURIComponent(
@@ -88,12 +87,10 @@ const Principal = () => {
               alt="Segurilabs"
               className="h-20 md:h-25 w-auto object-contain"
             />
-
             <div>
               <h1 className="text-xl md:text-2xl font-extrabold text-white tracking-wide">
                 Segurilabs
               </h1>
-
               <p className="text-[11px] md:text-xs text-green-200 font-medium">
                 Seguridad y Salud en el Trabajo
               </p>
@@ -110,12 +107,13 @@ const Principal = () => {
               Inicio
             </HashLink>
 
-            <Link
-              to="/nosotros"
+            <HashLink
+              smooth
+              to="/#Planes"
               className="relative text-white text-sm font-semibold transition-all duration-300 hover:text-green-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
             >
-              Nosotros
-            </Link>
+              Nuestros Planes
+            </HashLink>
 
             <HashLink
               smooth
@@ -132,13 +130,6 @@ const Principal = () => {
             >
               Equipo
             </HashLink>
-
-            <Link
-              to="/blog"
-              className="relative text-white text-sm font-semibold transition-all duration-300 hover:text-green-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Blog
-            </Link>
 
             <a
               href={quoteUrl}
@@ -189,13 +180,14 @@ const Principal = () => {
                 Inicio
               </HashLink>
 
-              <Link
-                to="/nosotros"
+              <HashLink
+                smooth
+                to="/#Planes"
                 onClick={() => setMobileMenu(false)}
                 className="text-white text-sm font-medium hover:text-green-300 transition"
               >
-                Nosotros
-              </Link>
+                Precios 
+              </HashLink>
 
               <HashLink
                 smooth
@@ -210,28 +202,10 @@ const Principal = () => {
                 smooth
                 to="/#equipo"
                 onClick={() => setMobileMenu(false)}
-                className="text-slate-700 font-semibold"
+                className="text-white text-sm font-medium hover:text-green-300 transition"
               >
                 Equipo
               </HashLink>
-
-              <Link
-                to="/blog"
-                onClick={() => setMobileMenu(false)}
-                className="text-white text-sm font-medium hover:text-green-300 transition"
-              >
-                Blog
-              </Link>
-
-              <a
-                href={quoteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileMenu(false)}
-                className="text-white text-sm font-medium hover:text-green-300 transition"
-              >
-                Contacto (WhatsApp)
-              </a>
 
               <a
                 href={quoteUrl}
