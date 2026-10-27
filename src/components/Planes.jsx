@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 const plans = [
@@ -85,13 +84,13 @@ export default function Planes() {
 
     if (!selectedPlan) return;
 
+    // Número configurado: 3207805001 y mensaje personalizado con el plan seleccionado
+    const phone = "3207805001";
     const message =
-      `Hola, estoy interesado/a en el ${selectedPlan.name}: ` +
-      `${selectedPlan.subtitle}. Quiero conocer el alcance, los requisitos ` +
-      `y la cotización para mi empresa.`;
+      `Hola, Segurilabs. Estoy interesado/a en el ${selectedPlan.name} (${selectedPlan.subtitle}). ` +
+      `Quiero conocer el alcance, los requisitos y solicitar una cotización para mi empresa.`;
 
-    const whatsappUrl =
-      `https://wa.me/573015826390?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };

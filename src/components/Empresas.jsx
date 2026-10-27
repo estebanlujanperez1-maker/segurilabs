@@ -8,9 +8,10 @@ import Portaldelacapilla from "../image/Portaldelacapilla.png";
 import seminario from "../image/Seminario.png";
 import Daniel from "../image/Daniel.png";
 import Panaderia from "../image/Panaderia.png";
+
 const partners = [
   { name: "Tienda comercializadora", abbr: "DP", logoFile: pyp}, 
-  { name: "Centro Optivisión", abbr: "CO", logoFile: Centro },              
+  { name: "Centro Optivisión", abbr: "CO", logoFile: Centro },             
   { name: "DANJO construciones", abbr: "DN", logoFile: Danjo },
   { name: "Occygea S.A.S", abbr: "EC", logoFile: Occygea },
   { name: "Portal de la capilla", abbr: "CO", logoFile: Portaldelacapilla },
@@ -22,14 +23,13 @@ const partners = [
 function LogoCard({ partner }) {
   const [isHovered, setIsHovered] = useState(false);
 
-  // El fondo se mantiene blanco para resaltar los logos, el borde cambia a verde al pasar el mouse
   const activeClasses = isHovered
     ? "border-green-500 shadow-xl -translate-y-1 scale-105"
     : "border-slate-100 shadow-sm bg-white text-slate-700";
 
   return (
     <div 
-      className={`logo-card flex items-center justify-center shrink-0 rounded-xl border bg-white px-5 transition-all duration-300 ease-out cursor-pointer ${activeClasses}`}
+      className={`logo-card flex items-center justify-center shrink-0 rounded-xl border bg-white px-4 transition-all duration-300 ease-out cursor-pointer ${activeClasses}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
@@ -40,16 +40,16 @@ function LogoCard({ partner }) {
       }}
     >
       {partner.logoFile ? (
-        <div className="w-full h-full flex items-center justify-center p-2">
+        // Padding reducido (p-1) y dimensiones ampliadas para que el logo abarque más espacio
+        <div className="w-full h-full flex items-center justify-center p-1">
           <img 
             src={partner.logoFile} 
             alt={partner.name} 
-            className="w-full h-full"
+            className="w-auto h-auto max-w-[90%] max-h-[85%]"
             style={{ 
               objectFit: "contain",
-              // LOGOS SIEMPRE A COLOR: Eliminamos el filtro 'grayscale' completamente
               filter: "none", 
-              opacity: 1, // Visibilidad completa desde el primer instante
+              opacity: 1,
             }}
           />
         </div>

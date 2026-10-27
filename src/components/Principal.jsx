@@ -6,6 +6,19 @@ import { HashLink } from "react-router-hash-link";
 const Principal = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
+
+  const phone = "3015826390";
+  
+  const diagnosticMessage = encodeURIComponent(
+    "Hola, Segurilabs. Me comunico porque quisiera solicitar mi Diagnóstico Gratis de SST."
+  );
+  const diagnosticUrl = `https://wa.me/${phone}?text=${diagnosticMessage}`;
+
+  const quoteMessage = encodeURIComponent(
+    "Hola, Segurilabs. Estoy interesado/a en solicitar una asesoría / cotización para mi empresa."
+  );
+  const quoteUrl = `https://wa.me/${phone}?text=${quoteMessage}`;
+
   return (
     <section
       className="relative min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
@@ -20,7 +33,7 @@ const Principal = () => {
       {/* WIDGET FLOTANTE INNOVADOR - DIAGNÓSTICO GRATIS (LADO IZQUIERDO) */}
       <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50 group">
         <a
-          href="https://wa.me/573015826390?text=Hola,%20quisiera%20solicitar%20mi%20Diagnóstico%20Gratis"
+          href={diagnosticUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="relative flex items-center gap-3 bg-black/70 backdrop-blur-xl border-y border-r border-green-500/40 p-2.5 sm:p-3 rounded-r-2xl shadow-[0_0_25px_rgba(34,197,94,0.25)] transition-all duration-300 hover:translate-x-2 hover:border-green-400 hover:shadow-[0_0_35px_rgba(34,197,94,0.5)] group"
@@ -97,6 +110,13 @@ const Principal = () => {
               Inicio
             </HashLink>
 
+            <Link
+              to="/nosotros"
+              className="relative text-white text-sm font-semibold transition-all duration-300 hover:text-green-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Nosotros
+            </Link>
+
             <HashLink
               smooth
               to="/#servicios"
@@ -121,7 +141,7 @@ const Principal = () => {
             </Link>
 
             <a
-              href="https://wa.me/573001112233"
+              href={quoteUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl bg-green-500 px-4 py-2 text-xs font-semibold text-white shadow-xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
@@ -163,6 +183,7 @@ const Principal = () => {
               <HashLink
                 smooth
                 to="/#inicio"
+                onClick={() => setMobileMenu(false)}
                 className="text-white text-sm font-medium hover:text-green-300 transition"
               >
                 Inicio
@@ -170,6 +191,7 @@ const Principal = () => {
 
               <Link
                 to="/nosotros"
+                onClick={() => setMobileMenu(false)}
                 className="text-white text-sm font-medium hover:text-green-300 transition"
               >
                 Nosotros
@@ -178,6 +200,7 @@ const Principal = () => {
               <HashLink
                 smooth
                 to="/#servicios"
+                onClick={() => setMobileMenu(false)}
                 className="text-white text-sm font-medium hover:text-green-300 transition"
               >
                 Servicios
@@ -186,24 +209,35 @@ const Principal = () => {
               <HashLink
                 smooth
                 to="/#equipo"
-                className="text-white text-sm font-medium hover:text-green-300 transition"
+                onClick={() => setMobileMenu(false)}
+                className="text-slate-700 font-semibold"
               >
                 Equipo
               </HashLink>
 
-              <a
-                href="https://wa.me/573001112233"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/blog"
+                onClick={() => setMobileMenu(false)}
                 className="text-white text-sm font-medium hover:text-green-300 transition"
               >
-                Contacto
+                Blog
+              </Link>
+
+              <a
+                href={quoteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenu(false)}
+                className="text-white text-sm font-medium hover:text-green-300 transition"
+              >
+                Contacto (WhatsApp)
               </a>
 
               <a
-                href="https://wa.me/573001112233"
+                href={quoteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => setMobileMenu(false)}
                 className="mt-2 rounded-xl bg-green-500 px-4 py-3 text-center text-sm text-white font-semibold hover:bg-green-400 transition"
               >
                 Cotizar ahora
@@ -230,13 +264,14 @@ const Principal = () => {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <HashLink
-              smooth
-              to="/#cotizar"
+            <a
+              href={quoteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl bg-green-500 px-7 py-3 text-sm font-bold text-white shadow-2xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
             >
               Solicitar asesoría
-            </HashLink>
+            </a>
 
             <HashLink
               smooth

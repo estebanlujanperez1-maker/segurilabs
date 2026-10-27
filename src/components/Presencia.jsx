@@ -147,7 +147,7 @@ export default function Presencia() {
 
                     <p className="text-green-50 flex items-center gap-2">
                       <Phone className="w-4 h-4" />
-                      +57 301 5826390
+                      +57 3015826390
                     </p>
 
                     <p className="text-green-50 flex items-center gap-2">
@@ -279,7 +279,7 @@ export default function Presencia() {
                   </h3>
 
                   <p className="text-gray-600 mt-2">
-                    Centro Comercial Plaza Real · Bello, Antioquia
+                    Centro Comercial Plaza Real · Santa Rosa de Osos, Antioquia
                   </p>
                 </div>
 

@@ -2,8 +2,8 @@ import React from "react";
 import { TrendingUp, ArrowRight } from "lucide-react";
 
 export default function SeparadorCumplimiento() {
-  // Reemplaza este número por el tuyo (incluye el código de país, ej: 57 para Colombia)
-  const telefono = "573000000000"; 
+ 
+  const telefono = "573015826390"; 
   const mensaje = encodeURIComponent("Hola, me interesa solicitar el diagnóstico gratis de cumplimiento para mi empresa.");
   const whatsappUrl = `https://wa.me/${telefono}?text=${mensaje}`;
 
