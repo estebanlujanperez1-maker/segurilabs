@@ -6,10 +6,10 @@ import sebastianImage from "../image/Sebastian .jpg";
 export default function Equipo() {
   const team = [
     {
-      name: "Luisa Lopera",
-      role: "Psicóloga Organizacional",
+      name: "Atención de",
+      role: "psicóloga Organizacional",
       image: null,
-      bio: "Psicóloga con práctica privada híbrida, mi trabajo se centra en acompañar duelo, ansiedad, estrés y dificultades relacionales en adultos. También acompaño a adolescentes. Combino rigor clínico con una mirada cercana y humana, cuidando tanto la documentación formal como el vínculo terapéutico a lo largo del proceso.",
+      bio: "Somos un equipo de profesionales en psicología que brinda atención presencial y virtual a adultos y adolescentes, acompañando procesos de duelo, ansiedad, estrés y dificultades relacionales. Nos caracterizamos por ofrecer una atención cercana, empática y humana, creando espacios seguros y libres de juicios donde cada persona pueda expresar sus emociones, afrontar los desafíos de la vida y fortalecer su bienestar emocional.",
     },
     {
       name: "Milena Palacio",
