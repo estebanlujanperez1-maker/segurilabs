@@ -82,7 +82,7 @@ const Footer = () => {
                 Lunes a Viernes
               </p>
               <p className="text-green-100 mt-1">
-                8:00 AM - 5:00 PM
+                9:00 AM - 4:30 PM
               </p>
             </div>
 

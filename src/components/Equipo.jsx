@@ -2,13 +2,14 @@ import React from "react";
 
 import milenaImage from "../image/Milena .jpg";
 import sebastianImage from "../image/Sebastian .jpg";
+import logoImage from "../image/Logo1.png";
 
 export default function Equipo() {
   const team = [
     {
       name: "Atención de",
       role: "psicóloga Organizacional",
-      image: null,
+      image: logoImage,
       bio: "Somos un equipo de profesionales en psicología que brinda atención presencial y virtual a adultos y adolescentes, acompañando procesos de duelo, ansiedad, estrés y dificultades relacionales. Nos caracterizamos por ofrecer una atención cercana, empática y humana, creando espacios seguros y libres de juicios donde cada persona pueda expresar sus emociones, afrontar los desafíos de la vida y fortalecer su bienestar emocional.",
     },
     {
@@ -18,10 +19,10 @@ export default function Equipo() {
       bio: "Tecnóloga en Seguridad y Salud en el Trabajo, apasionada por el bienestar de las personas y la creación de entornos laborales seguros y saludables. Me caracterizo por ser una persona cercana, creativa y comprometida, enfocada en encontrar soluciones prácticas que promuevan el cuidado, la prevención y el crecimiento de las organizaciones y sus colaboradores.",
     },
     {
-      name: "Sebastián",
-      role: "Asesor de Riesgos Laborales",
+      name: "Sebastián Hincapié",
+      role: "Administrador en Salud Ocupacional | Especialista ne Gerencia del Talento Humano",
       image: sebastianImage,
-      bio: "Profesional comprometido con la seguridad y la salud en el trabajo, enfocado en la prevención de riesgos laborales y la promoción de entornos de trabajo seguros y saludables.",
+      bio: "Con experiencia en la implementación y mejora de Sistemas de Gestión de Seguridad y Salud en el Trabajo en diferentes sectores económicos. Su perfil integra la prevención de riesgos laborales, la formación de trabajadores, el bienestar organizacional y el seguimiento de indicadores de gestión. Su enfoque combina el conocimiento técnico con una visión centrada en las personas, orientada a fortalecer los entornos laborales, promover la mejora continua y contribuir al cumplimiento de los objetivos empresariales.",
     },
   ];
 

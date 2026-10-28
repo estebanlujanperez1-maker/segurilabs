@@ -193,7 +193,7 @@ export default function Presencia() {
                   <p className="text-gray-300 leading-relaxed">
                     Lunes a Viernes
                     <br />
-                    8:00 AM - 6:00 PM
+                    9:00 AM - 4:30 PM
                   </p>
                 </div>
               </div>

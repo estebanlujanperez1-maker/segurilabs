@@ -246,7 +246,7 @@ export default function Preguntas() {
             <p className="text-xs text-gray-400">Nuestro equipo responde en menos de 24 horas.</p>
           </div>
           <a
-            href="mailto:empresa@email.com"
+            href="mailto:segurilabsst@gmail.com"
             className="ml-auto text-xs font-semibold text-purple-600 bg-white border border-purple-200 hover:bg-purple-50 transition rounded-xl px-4 py-2 whitespace-nowrap"
           >
             Contactar →
