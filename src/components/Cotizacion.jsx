@@ -114,7 +114,7 @@ export default function Cotizacion() {
               </p>
 
               <p className="font-semibold text-gray-900 text-lg">
-                +57 300 000 0000
+                +57 301 5826390
               </p>
             </div>
           </div>

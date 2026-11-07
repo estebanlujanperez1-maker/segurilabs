@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-// Iconos SVG inline (Tabler Icons outline) con color heredado (currentColor)
+
 const icons = {
   shield: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-white">
@@ -124,7 +124,7 @@ export default function Servicios() {
 
   return (
     <section className="bg-gradient-to-br from-[#0f4d35] via-[#1a7a52] to-[#3dc47f] py-16 px-8 font-sans">
-      {/* Header */}
+     
       <div className="text-center mb-10">
         <span className="inline-block bg-white/12 text-white border border-white/25 rounded-full text-[11px] font-semibold tracking-widest uppercase px-4 py-1 mb-4">
           Nuestros servicios

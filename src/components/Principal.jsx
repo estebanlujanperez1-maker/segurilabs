@@ -1,12 +1,22 @@
 import React, { useState } from "react";
-
 import Logo1 from "../image/Logo1.png";
-
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
 const Principal = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
+
+  const phone = "3015826390";
+  
+  const diagnosticMessage = encodeURIComponent(
+    "Hola, Segurilabs. Me comunico porque quisiera solicitar mi Diagnóstico Gratis de SST."
+  );
+  const diagnosticUrl = `https://wa.me/${phone}?text=${diagnosticMessage}`;
+
+  const quoteMessage = encodeURIComponent(
+    "Hola, Segurilabs. Estoy interesado/a en solicitar una asesoría / cotización para mi empresa."
+  );
+  const quoteUrl = `https://wa.me/${phone}?text=${quoteMessage}`;
 
   return (
     <section
@@ -19,11 +29,53 @@ const Principal = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
+      {/* WIDGET FLOTANTE INNOVADOR - DIAGNÓSTICO GRATIS (LADO IZQUIERDO) */}
+      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50 group">
+        <a
+          href={diagnosticUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative flex items-center gap-3 bg-black/70 backdrop-blur-xl border-y border-r border-green-500/40 p-2.5 sm:p-3 rounded-r-2xl shadow-[0_0_25px_rgba(34,197,94,0.25)] transition-all duration-300 hover:translate-x-2 hover:border-green-400 hover:shadow-[0_0_35px_rgba(34,197,94,0.5)] group"
+        >
+          {/* Indicador de pulso animado en vivo */}
+          <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-green-500"></span>
+          </span>
+
+          {/* Icono con Gradiente y Efecto Hover */}
+          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-green-500 to-emerald-400 text-white shadow-lg shadow-green-500/30 group-hover:scale-110 transition-transform duration-300">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+          </div>
+
+          {/* Texto del Widget */}
+          <div className="flex flex-col pr-2">
+            <span className="text-[10px] font-extrabold uppercase tracking-widest bg-gradient-to-r from-green-300 to-emerald-400 bg-clip-text text-transparent">
+              Obtén tu
+            </span>
+            <span className="text-xs sm:text-sm font-bold text-white group-hover:text-green-300 transition-colors whitespace-nowrap">
+              Diagnóstico Gratis
+            </span>
+          </div>
+        </a>
+      </div>
+
       {/* NAVBAR */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/10">
-
+      <header className="fixed top-0 left-0 w-full z-40 bg-black/20 backdrop-blur-xl border-b border-white/10">
         <nav className="max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8 py-3">
-
           {/* LOGO */}
           <HashLink
             smooth
@@ -35,12 +87,10 @@ const Principal = () => {
               alt="Segurilabs"
               className="h-20 md:h-25 w-auto object-contain"
             />
-
             <div>
               <h1 className="text-xl md:text-2xl font-extrabold text-white tracking-wide">
                 Segurilabs
               </h1>
-
               <p className="text-[11px] md:text-xs text-green-200 font-medium">
                 Seguridad y Salud en el Trabajo
               </p>
@@ -49,8 +99,6 @@ const Principal = () => {
 
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-8">
-
-            {/* Inicio */}
             <HashLink
               smooth
               to="/#inicio"
@@ -59,15 +107,14 @@ const Principal = () => {
               Inicio
             </HashLink>
 
-            {/* Nosotros */}
-            <Link
-              to="/nosotros"
+            <HashLink
+              smooth
+              to="/#Planes"
               className="relative text-white text-sm font-semibold transition-all duration-300 hover:text-green-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
             >
-              Quienes somos
-            </Link>
+              Nuestros Planes
+            </HashLink>
 
-            {/* Servicios */}
             <HashLink
               smooth
               to="/#servicios"
@@ -76,7 +123,6 @@ const Principal = () => {
               Servicios
             </HashLink>
 
-            {/* Equipo */}
             <HashLink
               smooth
               to="/#equipo"
@@ -85,21 +131,14 @@ const Principal = () => {
               Equipo
             </HashLink>
 
-            {/* Contacto */}
-            <Link
-              to="/blog"
-              className="relative text-white text-sm font-semibold transition-all duration-300 hover:text-green-300 after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:w-0 after:bg-green-400 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Blog
-            </Link>
-
-            {/* BOTÓN */}
             <a
+              href={quoteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-xl bg-green-500 px-4 py-2 text-xs font-semibold text-white shadow-xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
             >
               Cotizar ahora
             </a>
-
           </div>
 
           {/* MOBILE BUTTON */}
@@ -131,102 +170,82 @@ const Principal = () => {
         {/* MOBILE MENU */}
         {mobileMenu && (
           <div className="lg:hidden mx-5 mb-4 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl p-5 shadow-2xl">
-
             <div className="flex flex-col gap-5">
-
-              {/* Inicio */}
               <HashLink
                 smooth
                 to="/#inicio"
+                onClick={() => setMobileMenu(false)}
                 className="text-white text-sm font-medium hover:text-green-300 transition"
               >
                 Inicio
               </HashLink>
 
-              {/* Nosotros */}
-              <Link
-                to="/nosotros"
+              <HashLink
+                smooth
+                to="/#Planes"
+                onClick={() => setMobileMenu(false)}
                 className="text-white text-sm font-medium hover:text-green-300 transition"
               >
-                Nosotros
-              </Link>
+                Precios 
+              </HashLink>
 
-              {/* Servicios */}
               <HashLink
                 smooth
                 to="/#servicios"
+                onClick={() => setMobileMenu(false)}
                 className="text-white text-sm font-medium hover:text-green-300 transition"
               >
                 Servicios
               </HashLink>
 
-              {/* Equipo */}
               <HashLink
                 smooth
                 to="/#equipo"
+                onClick={() => setMobileMenu(false)}
                 className="text-white text-sm font-medium hover:text-green-300 transition"
               >
                 Equipo
               </HashLink>
 
-              {/* Contacto */}
               <a
-                href="https://wa.me/573001112233"
+                href={quoteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white text-sm font-medium hover:text-green-300 transition"
-              >
-                Contacto
-              </a>
-
-              {/* Cotizar */}
-              <a
-                href="https://wa.me/573001112233"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setMobileMenu(false)}
                 className="mt-2 rounded-xl bg-green-500 px-4 py-3 text-center text-sm text-white font-semibold hover:bg-green-400 transition"
               >
                 Cotizar ahora
               </a>
-
             </div>
           </div>
         )}
-
       </header>
 
       {/* HERO */}
       <div className="relative z-10 flex items-center justify-center min-h-screen px-6 pt-28">
-
         <div className="max-w-5xl text-center">
-
-          {/* TITULO */}
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight text-white">
-
             Protegemos el
             <span className="bg-gradient-to-r from-green-300 to-emerald-500 bg-clip-text text-transparent">
               {" "}bienestar{" "}
             </span>
-
             de tu empresa
           </h1>
 
-          {/* TEXTO */}
           <p className="mt-7 text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
-
             Implementamos soluciones integrales en Seguridad y Salud en el Trabajo,
             gestión del riesgo y bienestar organizacional.
           </p>
 
-          {/* BUTTONS */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-<HashLink
-  smooth
-  to="/#cotizar"
-  className="rounded-xl bg-green-500 px-7 py-3 text-sm font-bold text-white shadow-2xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
->
-  Solicitar asesoría
-</HashLink>
+            <a
+              href={quoteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-green-500 px-7 py-3 text-sm font-bold text-white shadow-2xl hover:bg-green-400 hover:scale-105 transition-all duration-300"
+            >
+              Solicitar asesoría
+            </a>
 
             <HashLink
               smooth
@@ -235,13 +254,9 @@ const Principal = () => {
             >
               Ver servicios
             </HashLink>
-
-          </div>
-
-         
           </div>
         </div>
-     
+      </div>
     </section>
   );
 };

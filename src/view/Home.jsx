@@ -20,37 +20,46 @@ import Separador4 from "../components/Separador4";
 export default function Home() {
   return (
     <>
-{/* No modificar nada rompen navegacion */}
+     
     
       <section id="inicio">
         <Principal />
       </section>
-         <section id="servicios">
+
+      <section id="servicios">
         <Servicios />
       </section>
 
       <Metodos />
 
       <Beneficios />
-    <section id="equipo">
+
+      <section id="equipo">
         <Equipo />
       </section>
-<Frase1 />
-<Comentarios  />
-<Estadisticas />
-     <Planes />
-<Separador2 />
-<Presencia />
-<Separador3 />
-     <section id="cotizar">
+
+      <Frase1 />
+      <Comentarios />
+      <Estadisticas />
+
+      
+      <section id="Planes">
+        <Planes />
+      </section>
+
+      <Separador2 />
+      <Presencia />
+      <Separador3 />
+
+      <section id="cotizar">
         <Cotizacion />
       </section>
+
       <Separador4 />
-<Empresas />
-<Separadorcumplimiento /> 
+      <Empresas />
+      <Separadorcumplimiento /> 
       <Preguntas />
       <Footer />
-
     </>
   );
 }

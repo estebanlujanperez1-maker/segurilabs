@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import CDA from "../image/CDA.jpeg";
+import Occygea from "../image/Occygea.png";
+import Daniel from "../image/Daniel.png";
+import Danjo from "../image/Danjo.png";
 
 export default function Comentarios() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -7,58 +11,35 @@ export default function Comentarios() {
   const comments = [
     {
       id: 1,
-      name: "María García",
-      role: "Directora Ejecutiva",
-      company: "TechVision Solutions",
+      company: "Constructora & Consultores SST",
       content:
-        "Excelente servicio, superaron nuestras expectativas. El equipo fue profesional y entregó los resultados a tiempo.",
+        "La implementación del SG-SST fue impecable. Nos ayudaron a cumplir con toda la normatividad legal vigente y a reducir los riesgos laborales significativamente.",
       rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
+      logo: CDA,
     },
     {
       id: 2,
-      name: "Carlos Mendoza",
-      role: "CEO",
-      company: "Digital Innovations Inc",
+      company: "OCCYGEA",
       content:
-        "Una experiencia transformadora. No solo cumplieron con lo solicitado, sino que aportaron ideas innovadoras.",
+        "Su asesoría en medicina preventiva y capacitaciones en seguridad industrial transformaron la cultura de autocuidado en nuestra empresa. Totalmente recomendados.",
       rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+      logo: Occygea,
     },
     {
       id: 3,
-      name: "Alejandra Ruiz",
-      role: "Gerente de Proyectos",
-      company: "Creative Agency Co",
+      company: "Ingeniero Daniel Preciado",
       content:
-        "Impresionante atención al detalle y compromiso con la calidad.",
+        "Excelente acompañamiento en la matriz de peligros y valorización de riesgos. Demuestran un gran dominio técnico y compromiso con la integridad de los trabajadores.",
       rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
+      logo: Daniel,
     },
     {
       id: 4,
-      name: "Diego Sánchez",
-      role: "Fundador",
-      company: "StartUp Ventures",
+      company: "Danjo Construcciones",
       content:
-        "El mejor equipo con el que hemos trabajado. Profesionales y responsables.",
+        "Gracias a su gestión en SST, optimizamos los protocolos de trabajo en alturas y elementos de protección personal. Un aliado clave para nuestras obras.",
       rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-    },
-    {
-      id: 5,
-      name: "Laura Fernández",
-      role: "Coordinadora",
-      company: "Enterprise Global",
-      content:
-        "Recomendamos ampliamente sus servicios. Fueron puntuales y eficientes.",
-      rating: 5,
-      image:
-        "https://images.unsplash.com/photo-1517256673193-ecf94d273885?w=400&h=400&fit=crop",
+      logo: Danjo,
     },
   ];
 
@@ -82,16 +63,15 @@ export default function Comentarios() {
         {/* Header */}
         <div className="text-center mb-14">
           <span className="text-green-600 font-semibold uppercase tracking-widest text-sm">
-            Testimonios
+            Testimonios SST
           </span>
 
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-3">
-            Lo que dicen nuestros clientes
+            Lo que dicen nuestros clientes en Seguridad y Salud
           </h2>
 
           <p className="text-gray-600 max-w-2xl mx-auto mt-5 text-sm md:text-base leading-relaxed">
-            Empresas que han confiado en nosotros destacan nuestro compromiso,
-            profesionalismo y calidad en cada proyecto.
+            Empresas del sector industrial y de construcción que confían en nosotros para proteger su activo más valioso: sus trabajadores.
           </p>
         </div>
 
@@ -169,13 +149,13 @@ function CommentCard({ comment, active }) {
           : "bg-white border border-gray-200 shadow-md p-5"
       }`}
     >
-      {/* Top */}
+      {/* Top: Logo y Nombre de la Empresa */}
       <div className="flex items-center gap-4 mb-5">
         <img
-          src={comment.image}
-          alt={comment.name}
+          src={comment.logo}
+          alt={`Logo de ${comment.company}`}
           loading="lazy"
-          className={`rounded-full object-cover border-2 border-white shadow-md ${
+          className={`object-contain bg-white rounded-lg p-1.5 border border-gray-100 shadow-sm ${
             active ? "w-16 h-16" : "w-12 h-12"
           }`}
         />
@@ -183,19 +163,11 @@ function CommentCard({ comment, active }) {
         <div>
           <h3
             className={`font-bold text-gray-900 ${
-              active ? "text-lg" : "text-sm"
+              active ? "text-xl" : "text-base"
             }`}
           >
-            {comment.name}
-          </h3>
-
-          <p className="text-gray-500 text-sm">
-            {comment.role}
-          </p>
-
-          <p className="text-green-600 text-sm font-medium">
             {comment.company}
-          </p>
+          </h3>
         </div>
       </div>
 
