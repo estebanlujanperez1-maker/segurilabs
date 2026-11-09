@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ShieldCheck, PhoneCall } from "lucide-react";
-
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 export default function Cotizacion() {
   const [formData, setFormData] = useState({
     nombre: '',
@@ -22,7 +22,7 @@ export default function Cotizacion() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/solicitudes', {
+      const response = await fetch(`${API_URL}/api/solicitudes`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
